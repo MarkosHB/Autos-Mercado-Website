@@ -19,6 +19,8 @@ def navbar(route: Route) -> rx.Component:
                 rx.hstack(
                     rx.spacer(),
                     _menu_inicio(route),
+                    _menu_cochesalacarta(route),
+                    _menu_compramostucoche(route),
                     _menu_sobrenosotros(route),
                     spacing=Spacing.BIG.value
                 ),
@@ -36,6 +38,14 @@ def navbar(route: Route) -> rx.Component:
                         rx.menu.item(
                             _menu_inicio(route),
                             background="transparent"
+                        ),
+                        rx.menu.item(
+                            _menu_cochesalacarta(route),
+                            backbround="transparent"
+                        ),
+                        rx.menu.item(
+                            _menu_compramostucoche(route),
+                            backbround="transparent"
                         ),
                         rx.menu.item(
                             _menu_sobrenosotros(route),
@@ -71,12 +81,34 @@ def _menu_inicio(route: Route) -> rx.Component:
     )
 
 
+def _menu_cochesalacarta(route: Route) -> rx.Component:
+    return rx.link(
+        title(
+            "Coches a la Carta",
+            size=[Size.DEFAULT_BIG.value],
+            color=TextColor.RED if route == Route.COCHESALACARTA else TextColor.PRIMARY
+        ),
+        href=Route.COCHESALACARTA.value
+    )
+
+
+def _menu_compramostucoche(route: Route) -> rx.Component:
+    return rx.link(
+        title(
+            "Compramos tu Coche",
+            size=[Size.DEFAULT_BIG.value],
+            color=TextColor.RED if route == Route.COMPRAMOSTUCOCHE else TextColor.PRIMARY
+        ),
+        href=Route.COMPRAMOSTUCOCHE.value
+    )
+
+
 def _menu_sobrenosotros(route: Route) -> rx.Component:
     return rx.link(
         title(
-            "Sobre nosostros",
+            "Sobre nosotros",
             size=[Size.DEFAULT_BIG.value],
-            color=TextColor.PRIMARY if route == Route.SOBRENOSOTROS else TextColor.PRIMARY
+            color=TextColor.RED if route == Route.SOBRENOSOTROS else TextColor.PRIMARY
         ),
         href=Route.SOBRENOSOTROS.value
     )

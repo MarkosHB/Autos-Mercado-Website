@@ -17,7 +17,7 @@ ROUTE = Route.SOBRENOSOTROS
 @rx.page(
     title=utils.title_sobrenosotros
 )
-def sobrenosotros() -> rx.Component:
+def compramostucoche() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(ROUTE),

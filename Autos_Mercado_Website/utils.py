@@ -5,11 +5,10 @@ def lang() -> rx.Component:
     return rx.script("document.documentElement.lang='es'")
 
 
-# Index.
 title_index = "Inicio | Autos-Mercado"
 
-# A la carta.
-title_alacarta = "Coches a la Carta | Autos-Mercado"
+title_cochesalacarta = "Coches a la Carta | Autos-Mercado"
 
-# Sobre nosostros.
+title_compramostucoche = "Compramos tu Coche | Autos-Mercado"
+
 title_sobrenosotros = "Sobre Nosotros | Autos-Mercado"
