@@ -6,5 +6,10 @@ def lang() -> rx.Component:
 
 
 # Index.
+title_index = "Inicio | Autos-Mercado"
 
-title_index = "Autos-Mercado"
+# A la carta.
+title_alacarta = "Coches a la Carta | Autos-Mercado"
+
+# Sobre nosostros.
+title_sobrenosotros = "Sobre Nosotros | Autos-Mercado"
