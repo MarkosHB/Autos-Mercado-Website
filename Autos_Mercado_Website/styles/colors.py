@@ -4,7 +4,7 @@ from enum import Enum
 class Color(Enum):
     PRIMARY = "#0C1116"
     SECONDARY = "#010408"
-    TERTIARY = "#FFFFFF"
+    TERTIARY = "#0a0e12"
 
 
 class TextColor(Enum):

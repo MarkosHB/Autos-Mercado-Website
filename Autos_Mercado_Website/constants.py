@@ -11,3 +11,10 @@ MOVIL1 = "+34 644 879 555"
 MOVIL2 = "+34 688 483 324"
 CORREO_ELECTRONICO = "autos-mercado@hotmail.com"
 DIRECCION = "Camino de Remanente, Nº16, Vélez-Málaga, España"
+
+# ---------------------------------------------------------------------------------------------
+# SECCION: Textos
+
+# Compramos tu Coche.
+
+

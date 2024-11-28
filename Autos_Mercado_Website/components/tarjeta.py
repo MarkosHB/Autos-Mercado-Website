@@ -1,9 +1,9 @@
 import reflex as rx
-from Autos_Mercado_Website.styles.colors import TextColor
+from Autos_Mercado_Website.styles.colors import Color, TextColor
 
 
 def tarjeta(icono: str, color: TextColor, link: str, texto: str) -> rx.Component:
-    return rx.card(
+    return rx.button(
         rx.link(
             rx.flex(
                 rx.icon(icono, size=20, color=color),
@@ -13,4 +13,8 @@ def tarjeta(icono: str, color: TextColor, link: str, texto: str) -> rx.Component
             href=link
         ),
         as_child=True,
+        radius="large",
+        size="3",
+        variant="surface",
+        bg_color=Color.TERTIARY.value,
     )
