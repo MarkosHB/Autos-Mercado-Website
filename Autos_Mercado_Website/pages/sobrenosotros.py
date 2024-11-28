@@ -24,7 +24,11 @@ def sobrenosotros() -> rx.Component:
         navbar(ROUTE),
         rx.center(
             rx.vstack(
-                header(),
+                header(
+                    "Titulo",
+                    "Texto",
+                    "Texto"
+                ),
                 # stock(),
                 footer(),
                 spacing=Spacing.VERY_BIG.value,
