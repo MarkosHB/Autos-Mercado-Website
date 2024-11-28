@@ -11,11 +11,12 @@ from Autos_Mercado_Website.views.stock import stock
 from Autos_Mercado_Website.views.footer import footer
 
 
-ROUTE = Route.SOBRENOSOTROS
+ROUTE = Route.COMPRAMOSTUCOCHE
 
 
 @rx.page(
-    title=utils.title_sobrenosotros
+    title=utils.title_compramostucoche,
+    route=ROUTE.value,
 )
 def compramostucoche() -> rx.Component:
     return rx.box(

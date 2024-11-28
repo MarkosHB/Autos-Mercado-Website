@@ -15,7 +15,8 @@ ROUTE = Route.SOBRENOSOTROS
 
 
 @rx.page(
-    title=utils.title_sobrenosotros
+    title=utils.title_sobrenosotros,
+    route=ROUTE.value,
 )
 def sobrenosotros() -> rx.Component:
     return rx.box(

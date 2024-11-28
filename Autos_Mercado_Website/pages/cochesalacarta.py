@@ -15,7 +15,8 @@ ROUTE = Route.COCHESALACARTA
 
 
 @rx.page(
-    title=utils.title_cochesalacarta
+    title=utils.title_cochesalacarta,
+    route=ROUTE.value,
 )
 def cochesalacarta() -> rx.Component:
     return rx.box(
