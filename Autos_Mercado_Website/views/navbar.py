@@ -31,7 +31,7 @@ def navbar(route: Route) -> rx.Component:
                 rx.menu.root(
                     rx.menu.trigger(
                         rx.flex(
-                            rx.icon("align-justify", size=40)
+                            rx.icon("align-justify", size=40, color="white")
                         )
                     ),
                     rx.menu.content(
