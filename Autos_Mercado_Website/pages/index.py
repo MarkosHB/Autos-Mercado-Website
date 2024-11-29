@@ -3,7 +3,7 @@ import reflex as rx
 from Autos_Mercado_Website.routes import Route
 import Autos_Mercado_Website.utils as utils
 from Autos_Mercado_Website.components.status_chip import status_chip
-from Autos_Mercado_Website.components.mode_switch import dark_mode_toggle
+from Autos_Mercado_Website.components.dark_mode_toggle import dark_mode_toggle
 from Autos_Mercado_Website.components.car_preview import car_preview
 
 from Autos_Mercado_Website.styles.styles import Spacing
