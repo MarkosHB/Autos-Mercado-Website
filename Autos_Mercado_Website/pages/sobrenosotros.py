@@ -1,7 +1,6 @@
 import reflex as rx
 
 import Autos_Mercado_Website.utils as utils
-from Autos_Mercado_Website.components.rectangle_content import rectangle_content
 from Autos_Mercado_Website.routes import Route
 
 from Autos_Mercado_Website.styles.styles import Spacing
@@ -33,8 +32,6 @@ def sobrenosotros() -> rx.Component:
                     text2=texto.SOBRE_NOSOTROS_TEXTO2,
                 ),
                 data_list(),
-                # rectangle_content(),
-                # stock(),
                 footer(),
                 spacing=Spacing.VERY_BIG.value,
                 align="center",

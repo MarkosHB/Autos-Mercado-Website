@@ -12,7 +12,7 @@ def heading(titulo: str, texto1="", texto2="") -> rx.Component:
             rx.hstack(
                 rectangle_content(texto1),
                 rectangle_content(texto2),
-                gap=Size.DEFAULT.value,
+                gap=Size.BIG.value,
             ),
         ),
         rx.mobile_only(
