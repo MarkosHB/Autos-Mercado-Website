@@ -28,12 +28,13 @@ def sobrenosotros() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(
+                    "SOBRE_NOSOTROS",
                     "Titulo",
                     "Texto",
                     "Texto"
                 ),
                 data_list(),
-                rectangle_content(),
+                # rectangle_content(),
                 # stock(),
                 footer(),
                 spacing=Spacing.VERY_BIG.value,

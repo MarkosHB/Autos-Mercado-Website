@@ -2,7 +2,7 @@ import reflex as rx
 
 from Autos_Mercado_Website.routes import Route
 import Autos_Mercado_Website.utils as utils
-from Autos_Mercado_Website.components.status_chip import status_chip
+from Autos_Mercado_Website.components.badge_chip import badge_chip
 from Autos_Mercado_Website.components.dark_mode_toggle import dark_mode_toggle
 from Autos_Mercado_Website.components.car_preview import car_preview
 
@@ -33,14 +33,6 @@ def index() -> rx.Component:
                     src="/fachada.jpg",
                     border_radius="25px 25px",
                     border="4px solid #0a0e12",
-                ),
-                rx.hstack(
-                    status_chip("Info", "info", "blue"),
-                    status_chip("Success", "circle-check", "green"),
-                    status_chip("Warning", "circle-alert", "yellow"),
-                    status_chip("Error", "circle-x", "red"),
-                    wrap="wrap",
-                    spacing="2",
                 ),
                 car_preview(),
                 # stock(),

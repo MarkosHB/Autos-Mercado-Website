@@ -27,7 +27,8 @@ def cochesalacarta() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(
-                    "Titulo",
+                    "COCHES_A_LA_CARTA",
+                    "Conseguimos tu vehículo nuevo de importación.",
                     "Texto",
                     "Texto"
                 ),

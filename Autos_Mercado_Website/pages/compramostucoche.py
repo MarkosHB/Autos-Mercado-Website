@@ -25,6 +25,7 @@ def compramostucoche() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(
+                    pagina="COMPRAMOS_TU_COCHE",
                     titulo="¿Interesado en vender tu vehículo?",
                     text1="Utiliza el lenguaje de programación que tú quieras para resolver ejercicios que te ayudarán a mejorar tu forma de pensar y enfrentarte a retos de código.",
                     text2="Consulta correcciones de la comunidad en los repositorios de código de los diferentes retos. Se han dividido entre los resueltos en 2022 y 2023 (consulta su etiqueta).",
