@@ -3,7 +3,7 @@
 
 # Coches a la Carta.
 COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo de importación."
-COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro stock se ajusta a su idea preconcebida sobre el vehículo deseado, existe la posibilidad de obtener el modelo concreto o similar expresamente para su petición."
+COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro catálogo se ajusta a su idea preconcebida sobre el vehículo deseado, existe la posibilidad de obtener el modelo concreto o de características similares expresamente para su petición."
 COCHES_A_LA_CARTA_TEXTO2 = ""
 
 # Compramos tu Coche.

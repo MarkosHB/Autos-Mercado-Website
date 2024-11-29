@@ -6,7 +6,7 @@ from Autos_Mercado_Website.styles.styles import Color
 def welcome() -> rx.Component:
     return rx.center(
         rx.image(
-            src="/fachada.jpg",
+            src="/interior.jpg",
             border_radius="25px 25px",
             border="2px solid white",
         ),

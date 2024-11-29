@@ -34,7 +34,7 @@ def index() -> rx.Component:
                 car_preview(),
                 # stock(),
                 footer(),
-                spacing=Spacing.VERY_BIG.value,
+                spacing=Spacing.DEFAULT_BIG.value,
                 align="center",
                 width="100%"
             )

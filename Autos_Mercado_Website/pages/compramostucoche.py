@@ -33,7 +33,7 @@ def compramostucoche() -> rx.Component:
                 ),
                 form(),
                 footer(),
-                spacing=Spacing.VERY_BIG.value,
+                spacing=Spacing.DEFAULT_BIG.value,
                 align="center",
                 width="100%"
             )
