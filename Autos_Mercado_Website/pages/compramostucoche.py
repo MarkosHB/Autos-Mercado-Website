@@ -10,6 +10,7 @@ from Autos_Mercado_Website.views.header import header
 from Autos_Mercado_Website.components.form import form
 from Autos_Mercado_Website.views.footer import footer
 
+import Autos_Mercado_Website.texts as texto
 
 ROUTE = Route.COMPRAMOSTUCOCHE
 
@@ -26,9 +27,9 @@ def compramostucoche() -> rx.Component:
             rx.vstack(
                 header(
                     pagina="COMPRAMOS_TU_COCHE",
-                    titulo="¿Interesado en vender tu vehículo?",
-                    text1="Utiliza el lenguaje de programación que tú quieras para resolver ejercicios que te ayudarán a mejorar tu forma de pensar y enfrentarte a retos de código.",
-                    text2="Consulta correcciones de la comunidad en los repositorios de código de los diferentes retos. Se han dividido entre los resueltos en 2022 y 2023 (consulta su etiqueta).",
+                    titulo=texto.COMPRAMOS_TU_COCHE_TITULO,
+                    text1=texto.COMPRAMOS_TU_COCHE_TEXTO1,
+                    text2=texto.COMPRAMOS_TU_COCHE_TEXTO2,
                 ),
                 form(),
                 footer(),
