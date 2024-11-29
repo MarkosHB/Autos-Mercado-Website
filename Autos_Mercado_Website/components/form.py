@@ -1,6 +1,22 @@
 import reflex as rx
 
 
+class FormInputState(rx.State):
+    form_data: dict = {}
+
+    @rx.event
+    def handle_submit(self, form_data: dict):
+        """Handle the form submit.
+         rx.button(
+            "Success",
+            on_click=rx.toast.success("Success!"),
+            color_scheme="green",
+        ),
+        TODO
+        """
+        self.form_data = form_data
+
+
 def form_field(
     label: str, placeholder: str, type: str, name: str
 ) -> rx.Component:
@@ -21,7 +37,7 @@ def form_field(
     )
 
 
-def formulario_contacto() -> rx.Component:
+def form() -> rx.Component:
     return rx.card(
         rx.flex(
             rx.hstack(

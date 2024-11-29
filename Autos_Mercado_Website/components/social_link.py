@@ -2,7 +2,7 @@ import reflex as rx
 from Autos_Mercado_Website.styles.colors import Color, TextColor
 
 
-def tarjeta(icono: str, color: TextColor, link: str, texto: str) -> rx.Component:
+def social_link(icono: str, color: TextColor, link: str, texto: str) -> rx.Component:
     return rx.button(
         rx.link(
             rx.flex(

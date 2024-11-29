@@ -10,6 +10,8 @@ from Autos_Mercado_Website.views.header import header
 from Autos_Mercado_Website.views.stock import stock
 from Autos_Mercado_Website.views.footer import footer
 
+from Autos_Mercado_Website.components.accordion import accordion
+
 
 ROUTE = Route.COCHESALACARTA
 
@@ -29,6 +31,7 @@ def cochesalacarta() -> rx.Component:
                     "Texto",
                     "Texto"
                 ),
+                accordion(),
                 # stock(),
                 footer(),
                 spacing=Spacing.VERY_BIG.value,

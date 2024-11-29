@@ -7,8 +7,7 @@ from Autos_Mercado_Website.styles.fonts import FontWeight
 
 def heading(title: str, body1="", body2="") -> rx.Component:
     return rx.vstack(
-        rx.heading(title, weight="bold", size="8"),
-        rx.separator(),
+        rx.blockquote(title, weight="bold", size="8", color_scheme="blue"),
         rx.grid(
             _paragraph_text(body1),
             _paragraph_text(body2),
@@ -17,6 +16,7 @@ def heading(title: str, body1="", body2="") -> rx.Component:
             width="100%",
             gap=Size.MEDIUM_BIG.value
         ),
+        rx.separator(),
         spacing=Spacing.BIG.value,
         padding_x=Size.ZERO.value,
         width="100%"
