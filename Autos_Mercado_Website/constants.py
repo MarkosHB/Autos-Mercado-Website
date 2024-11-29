@@ -7,7 +7,8 @@ INSTAGRAM = "https://www.instagram.com/autos_mercado/"
 FACEBOOK = "https://www.facebook.com/autosmercadovelez"
 
 # Info contacto.
-MOVIL1 = "+34 644 879 555"
-MOVIL2 = "+34 688 483 324"
+MOVIL1 = "644 879 555"
+MOVIL2 = "688 483 324"
+FIJO = "952 02 60 44"
 CORREO_ELECTRONICO = "autos-mercado@hotmail.com"
-DIRECCION = "Camino de Remanente, Nº16, Vélez-Málaga, España"
+DIRECCION = "Camino de Remanente Nº16, Vélez-Málaga (España)"

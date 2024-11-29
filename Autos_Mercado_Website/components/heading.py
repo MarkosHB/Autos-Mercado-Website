@@ -1,35 +1,26 @@
 import reflex as rx
 
-from Autos_Mercado_Website.styles.colors import TextColor
-from Autos_Mercado_Website.styles.styles import Size, Spacing
-from Autos_Mercado_Website.styles.fonts import FontWeight
+from Autos_Mercado_Website.components.rectangle_content import rectangle_content
+from Autos_Mercado_Website.styles.styles import Size
 
 
-def heading(title: str, body1="", body2="") -> rx.Component:
+def heading(titulo: str, texto1="", texto2="") -> rx.Component:
     return rx.vstack(
-        rx.blockquote(title, weight="bold", size="8", color_scheme="blue"),
-        rx.grid(
-            _paragraph_text(body1),
-            _paragraph_text(body2),
-            rows="1",
-            columns="2",
-            width="100%",
-            gap=Size.MEDIUM_BIG.value
-        ),
-        rx.separator(),
-        spacing=Spacing.BIG.value,
-        padding_x=Size.ZERO.value,
-        width="100%"
-    )
+        rx.blockquote(titulo, weight="bold", size="8", color_scheme="blue"),
 
-
-def _paragraph_text(text: str) -> rx.Component:
-    return rx.box(
-        rx.text(
-            text,
-            font_size=Size.DEFAULT_MEDIUM.value,
-            font_weight=FontWeight.MEDIUM.value
+        rx.tablet_and_desktop(
+            rx.hstack(
+                rectangle_content(texto1),
+                rectangle_content(texto2),
+                gap=Size.DEFAULT.value,
+            ),
         ),
-        row_span=1,
-        col_span=1
+        rx.mobile_only(
+            rx.vstack(
+                rectangle_content(texto1),
+                rectangle_content(texto2),
+                gap=Size.VERY_SMALL.value,
+            )
+        ),
+        width="100%",
     )

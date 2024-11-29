@@ -6,8 +6,10 @@ from Autos_Mercado_Website.styles.styles import Size, Spacing, Color, TextColor,
 
 def footer() -> rx.Component:
     return rx.flex(
-        social_link("Phone", TextColor.GREEN, None, const.MOVIL1),
-        social_link("Phone", TextColor.GREEN, None, const.MOVIL2),
+        #social_link("Map-pin", TextColor.YELLOW, None, const.DIRECCION),
+        social_link("Smartphone", TextColor.GREEN, None, const.MOVIL1),
+        social_link("Smartphone", TextColor.GREEN, None, const.MOVIL2),
+        social_link("Phone", TextColor.GREEN, None, const.FIJO),
         social_link("Mail", TextColor.PURPLE, None, const.CORREO_ELECTRONICO),
         social_link("Instagram", TextColor.PINK, const.INSTAGRAM, "@autos_mercado"),
         social_link("Facebook", TextColor.BLUE, const.FACEBOOK, "@autosmercadovelez"),
