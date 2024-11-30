@@ -7,9 +7,9 @@ from Autos_Mercado_Website.styles.styles import Spacing
 
 from Autos_Mercado_Website.views.navbar import navbar
 from Autos_Mercado_Website.views.header import header
+from Autos_Mercado_Website.views.pasos_a_la_carta import pasos_a_la_carta
 from Autos_Mercado_Website.views.footer import footer
 
-from Autos_Mercado_Website.components.accordion import accordion
 import Autos_Mercado_Website.texts as texto
 
 ROUTE = Route.COCHESALACARTA
@@ -31,7 +31,14 @@ def cochesalacarta() -> rx.Component:
                     text1=texto.COCHES_A_LA_CARTA_TEXTO1,
                     text2=texto.COCHES_A_LA_CARTA_TEXTO2,
                 ),
-                accordion(),
+                pasos_a_la_carta(
+                    header1=texto.DESPLEGABLE_HEADER1,
+                    header2=texto.DESPLEGABLE_HEADER2,
+                    header3=texto.DESPLEGABLE_HEADER3,
+                    texto1=texto.DESPLEGABLE_TEXTO1,
+                    texto2=texto.DESPLEGABLE_TEXTO2,
+                    texto3=texto.DESPLEGABLE_TEXTO3,
+                ),
                 footer(),
                 spacing=Spacing.DEFAULT_BIG.value,
                 align="center",

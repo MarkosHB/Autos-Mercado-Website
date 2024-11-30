@@ -19,6 +19,7 @@ def header(pagina: str, titulo: str, text1: str, text2: str) -> rx.Component:
         rx.container(
             rx.card(
                 heading(
+                    pagina,
                     titulo,
                     text1,
                     text2,

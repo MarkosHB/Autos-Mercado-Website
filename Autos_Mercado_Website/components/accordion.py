@@ -1,23 +1,44 @@
 import reflex as rx
 
 
-def accordion() -> rx.Component:
+def accordion(header1: str, header2: str, header3: str,
+              texto1: str, texto2: str, texto3: str) -> rx.Component:
     return rx.accordion.root(
         rx.accordion.item(
-            header="First Item",
-            content="The first accordion item's content",
-            value="item_1",
+            header=rx.heading(header1),
+            content=rx.text(
+                texto1,
+                text_align="justify",
+                color=rx.color_mode_cond(light="black", dark="white"),
+                padding="12px",
+                ),
+            value="casilla_1",
         ),
         rx.accordion.item(
-            header="Second Item",
-            content="The second accordion item's content",
-            value="item_2",
+            header=rx.heading(header2),
+            content=rx.text(
+                texto2,
+                text_align="justify",
+                color=rx.color_mode_cond(light="black", dark="white"),
+                padding="12px",
+            ),
+            value="casilla_2",
         ),
         rx.accordion.item(
-            header="Third item",
-            content="The third accordion item's content",
-            value="item_3",
+            header=rx.heading(header3),
+            content=rx.text(
+                texto3,
+                text_align="justify",
+                color=rx.color_mode_cond(light="black", dark="white"),
+                padding="12px",
+            ),
+            value="casilla_3",
         ),
+        type="single",
         collapsible=True,
-        width="300px",
+        show_dividers=True,
+        color_scheme="blue",
+        variant="surface",
+        radius="full",
+        width="100%",
     )
