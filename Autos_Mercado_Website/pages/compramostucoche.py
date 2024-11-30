@@ -32,6 +32,8 @@ def compramostucoche() -> rx.Component:
                     text2=texto.COMPRAMOS_TU_COCHE_TEXTO2,
                 ),
                 form(),
+                # Quieres que tu coche este aqui?
+                # rx.image(src="fachada_antigua"),
                 footer(),
                 spacing=Spacing.DEFAULT_BIG.value,
                 align="center",

@@ -2,6 +2,7 @@ import reflex as rx
 
 from Autos_Mercado_Website.components.rectangle_content import rectangle_content
 from Autos_Mercado_Website.styles.styles import Size
+from Autos_Mercado_Website.texts import COCHES_A_LA_CARTA_CALLOUT
 
 
 def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
@@ -13,7 +14,8 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
 
             rx.vstack(
                 rectangle_content(texto1),
-                #listado_compramos_tu_coche(),
+                listado_coches_a_la_carta(),
+                rectangle_content(texto2),
                 gap=Size.DEFAULT.value,
             ) if pagina == "COCHES_A_LA_CARTA" else rx.fragment(),
 
@@ -35,7 +37,8 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
 
             rx.vstack(
                 rectangle_content(texto1),
-                #listado_compramos_tu_coche(),
+                listado_coches_a_la_carta(),
+                rectangle_content(texto2),
                 gap=Size.DEFAULT.value,
             ) if pagina == "COCHES_A_LA_CARTA" else rx.fragment(),
 
@@ -57,19 +60,13 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
 
 
 def listado_coches_a_la_carta() -> rx.Component:
-    return rx.list(
-        rx.list.item(
-            rx.icon("circle_check_big", color="green"),
-            " Allowed",
+    return rx.callout(
+        rx.text(
+            COCHES_A_LA_CARTA_CALLOUT,
+            size="3",
         ),
-        rx.list.item(
-            rx.icon("octagon_x", color="red"),
-            " Not",
-        ),
-        rx.list.item(
-            rx.icon("settings", color="grey"), " Settings"
-        ),
-        list_style_type="none",
+        icon="info",
+        color_scheme="gray",
     )
 
 

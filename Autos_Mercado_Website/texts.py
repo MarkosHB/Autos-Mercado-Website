@@ -6,9 +6,10 @@
 # ------------------
 # Coches a la Carta.
 # ------------------
-COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo de importación."
-COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro catálogo se ajusta a su idea preconcebida sobre el vehículo deseado, existe la posibilidad de obtener el modelo concreto o de características similares expresamente para su petición."
-COCHES_A_LA_CARTA_TEXTO2 = ""  # Intencionado.
+COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo o de segunda mano."
+COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro catálogo se ajusta a su idea preconcebida sobre el vehículo de sus sueños, existe la posibilidad de obtener el modelo concreto o de características similares expresamente para su petición."
+COCHES_A_LA_CARTA_TEXTO2 = "Desde vehículos nuevos de importación directamente desde los mejores concesionarios y subastas en Europa hasta los mejores segunda mano en perfecto estado de la provincia de Málaga."
+COCHES_A_LA_CARTA_CALLOUT = "Alternativa disponible gracias a nuestro equipo comercial, especialista en encontrar el mejor coche de ocasión para usted"
 
 DESPLEGABLE_HEADER1 = "1) Póngase en contacto con nosotros"
 DESPLEGABLE_HEADER2 = "2) Valore los candidatos tras la búsqueda"
