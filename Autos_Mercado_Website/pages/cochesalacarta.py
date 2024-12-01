@@ -40,7 +40,7 @@ def cochesalacarta() -> rx.Component:
                     texto3=texto.DESPLEGABLE_TEXTO3,
                 ),
                 footer(),
-                spacing=Spacing.DEFAULT_BIG.value,
+                spacing=Spacing.DEFAULT.value,
                 align="center",
                 width="100%"
             )

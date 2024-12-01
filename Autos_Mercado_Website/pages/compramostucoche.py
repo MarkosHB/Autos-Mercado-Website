@@ -7,7 +7,6 @@ from Autos_Mercado_Website.styles.styles import Spacing
 
 from Autos_Mercado_Website.views.navbar import navbar
 from Autos_Mercado_Website.views.header import header
-from Autos_Mercado_Website.components.form import form
 from Autos_Mercado_Website.views.footer import footer
 
 import Autos_Mercado_Website.texts as texto
@@ -31,11 +30,18 @@ def compramostucoche() -> rx.Component:
                     text1=texto.COMPRAMOS_TU_COCHE_TEXTO1,
                     text2=texto.COMPRAMOS_TU_COCHE_TEXTO2,
                 ),
-                form(),
-                # Quieres que tu coche este aqui?
-                # rx.image(src="fachada_antigua"),
+                rx.center(
+                    rx.image(
+                        src="/fachada.jpg",
+                        border_radius="20px 20px",
+                        border="1px solid gray",
+
+                    ),
+                    width="100%",
+                    padding="0px 32px 32px 32px",
+                ),
                 footer(),
-                spacing=Spacing.DEFAULT_BIG.value,
+                spacing=Spacing.DEFAULT.value,
                 align="center",
                 width="100%"
             )

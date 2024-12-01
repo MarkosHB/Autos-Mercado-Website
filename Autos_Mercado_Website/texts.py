@@ -6,9 +6,9 @@
 # ------------------
 # Coches a la Carta.
 # ------------------
-COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo o de segunda mano."
+COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo o de segunda mano"
 COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro catálogo se ajusta a su idea preconcebida sobre el vehículo de sus sueños, existe la posibilidad de obtener el modelo concreto o de características similares expresamente para su petición."
-COCHES_A_LA_CARTA_TEXTO2 = "Desde vehículos nuevos de importación directamente desde los mejores concesionarios y subastas en Europa hasta los mejores segunda mano en perfecto estado de la provincia de Málaga."
+COCHES_A_LA_CARTA_TEXTO2 = "Desde vehículos nuevos de importación directamente desde los mejores concesionarios y subastas en Europa hasta los mejores segunda mano en perfecto estado de la provincia de Málaga y alrededores."
 COCHES_A_LA_CARTA_CALLOUT = "Alternativa disponible gracias a nuestro equipo comercial, especialista en encontrar el mejor coche de ocasión para usted"
 
 DESPLEGABLE_HEADER1 = "1) Póngase en contacto con nosotros"
@@ -21,14 +21,18 @@ DESPLEGABLE_TEXTO3 = ""
 # -------------------
 # Compramos tu Coche.
 # -------------------
-COMPRAMOS_TU_COCHE_TITULO = "¿Interesado en vender tu vehículo?"
-COMPRAMOS_TU_COCHE_TEXTO1 = "Además de los servicios habituales de un concesionario compra-venta tradicional, en Autos Mercado ofrecemos la posibilidad de incluir su antiguo vehículo en nuestra exposición para su posterior venta."
+COMPRAMOS_TU_COCHE_TITULO = "¿Interesado en vender su vehículo?"
+COMPRAMOS_TU_COCHE_TEXTO1 = "Además de los servicios habituales para un concesionario tradicional, en Autos Mercado ofrecemos la posibilidad de incluir su antiguo vehículo en nuestro catálogo a cambio de recibir una comisión proporcional a la venta."
 COMPRAMOS_TU_COCHE_TEXTO2 = ""  # Intencionado.
+COMPRAMOS_TU_COCHE_CALLOUT1 = "Su vehículo formará parte de la exposición"
+COMPRAMOS_TU_COCHE_CALLOUT2 = "Podrá retirarlo en cualquier momento sin compromiso"
 
+COMPRAMOS_TU_COCHE_LISTADO1 = "Evaluamos su coche y le damos las mejores recomendaciones basándonos en sus preferencias y la situación del mercado."
+COMPRAMOS_TU_COCHE_LISTADO2 = "Nos encargamos de todos los trámites y gestiones durante el proceso de venta, manteniendo siempre comunicación con usted."
 
 # ---------------
 # Sobre Nosotros.
 # ---------------
-SOBRE_NOSOTROS_TITULO = "Conoce las instalaciones y a nuestro personal."
+SOBRE_NOSOTROS_TITULO = "Conoce las instalaciones y a nuestro personal"
 SOBRE_NOSOTROS_TEXTO1 = "Autos Mercado es un concesionario particular de compra-venta de coches ubicado en Vélez-Málaga (España). Estamos entre los concesionarios de automóviles más confiables y elegidos por los usuarios, con un amplio historial de clientes satisfechos."
 SOBRE_NOSOTROS_TEXTO2 = "Ofrecemos un servicio completo y personalizado, ya sea para comprar un coche de segunda mano, nuevo de importación o si desea vender su coche."

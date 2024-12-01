@@ -5,7 +5,7 @@ def accordion(header1: str, header2: str, header3: str,
               texto1: str, texto2: str, texto3: str) -> rx.Component:
     return rx.accordion.root(
         rx.accordion.item(
-            header=rx.heading(header1),
+            header=rx.heading(header1, color_scheme="blue"),
             content=rx.text(
                 texto1,
                 text_align="justify",
@@ -15,7 +15,7 @@ def accordion(header1: str, header2: str, header3: str,
             value="casilla_1",
         ),
         rx.accordion.item(
-            header=rx.heading(header2),
+            header=rx.heading(header2, color_scheme="blue"),
             content=rx.text(
                 texto2,
                 text_align="justify",
@@ -25,7 +25,7 @@ def accordion(header1: str, header2: str, header3: str,
             value="casilla_2",
         ),
         rx.accordion.item(
-            header=rx.heading(header3),
+            header=rx.heading(header3, color_scheme="blue"),
             content=rx.text(
                 texto3,
                 text_align="justify",
@@ -37,7 +37,7 @@ def accordion(header1: str, header2: str, header3: str,
         type="single",
         collapsible=True,
         show_dividers=True,
-        color_scheme="blue",
+        color_scheme="gray",
         variant="surface",
         radius="full",
         width="100%",

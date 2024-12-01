@@ -1,6 +1,7 @@
 import reflex as rx
 
 import Autos_Mercado_Website.utils as utils
+from Autos_Mercado_Website.components.form import form
 from Autos_Mercado_Website.routes import Route
 from Autos_Mercado_Website.styles.colors import Color
 
@@ -34,18 +35,9 @@ def sobrenosotros() -> rx.Component:
                     text2=texto.SOBRE_NOSOTROS_TEXTO2,
                 ),
                 data_list(),
-                rx.center(
-                    rx.image(
-                        src="/fachada.jpg",
-                        border_radius="25px 25px",
-                        border="2px solid white",
-                    ),
-                    width="100%",
-                    padding="32px",
-                    background=Color.SECONDARY.value
-                ),
+                form(),
                 footer(),
-                spacing=Spacing.DEFAULT_BIG.value,
+                spacing=Spacing.DEFAULT.value,
                 align="center",
                 width="100%"
             )

@@ -7,7 +7,7 @@ def welcome() -> rx.Component:
     return rx.center(
         rx.image(
             src="/interior.jpg",
-            border_radius="25px 25px",
+            border_radius="20px 20px",
             border="2px solid white",
         ),
         width="100%",
