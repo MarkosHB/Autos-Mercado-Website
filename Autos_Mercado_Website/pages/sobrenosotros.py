@@ -34,7 +34,19 @@ def sobrenosotros() -> rx.Component:
                     text1=texto.SOBRE_NOSOTROS_TEXTO1,
                     text2=texto.SOBRE_NOSOTROS_TEXTO2,
                 ),
-                data_list(),
+                rx.center(
+                    rx.image(
+                        src="/interior.jpg",
+                        border_radius="20px 20px",
+                        border="1px solid gray",
+
+                    ),
+                    width="100%",
+                    padding="0px 32px 32px 32px",
+                ),
+                #data_list(),
+                #TODO
+                # social_link("Map-pin", TextColor.YELLOW, None, const.DIRECCION),
                 form(),
                 footer(),
                 spacing=Spacing.DEFAULT.value,

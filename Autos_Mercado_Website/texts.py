@@ -6,7 +6,7 @@
 # ------------------
 # Coches a la Carta.
 # ------------------
-COCHES_A_LA_CARTA_TITULO = "Conseguimos tu vehículo nuevo o de segunda mano"
+COCHES_A_LA_CARTA_TITULO = "Conseguimos su vehículo nuevo o de segunda mano"
 COCHES_A_LA_CARTA_TEXTO1 = "Si ninguno de los coches en nuestro catálogo se ajusta a su idea preconcebida sobre el vehículo de sus sueños, existe la posibilidad de obtener el modelo concreto o de características similares expresamente para su petición."
 COCHES_A_LA_CARTA_TEXTO2 = "Desde vehículos nuevos de importación directamente desde los mejores concesionarios y subastas en Europa hasta los mejores segunda mano en perfecto estado de la provincia de Málaga y alrededores."
 COCHES_A_LA_CARTA_CALLOUT = "Alternativa disponible gracias a nuestro equipo comercial, especialista en encontrar el mejor coche de ocasión para usted"
@@ -21,7 +21,7 @@ DESPLEGABLE_TEXTO3 = "Es frecuente que el estado en el que su nuevo vehículo es
 # -------------------
 # Compramos tu Coche.
 # -------------------
-COMPRAMOS_TU_COCHE_TITULO = "¿Interesado en vender su vehículo?"
+COMPRAMOS_TU_COCHE_TITULO = "¿Interesad@ en vender su vehículo?"
 COMPRAMOS_TU_COCHE_TEXTO1 = "Además de los servicios habituales para un concesionario tradicional, en Autos Mercado ofrecemos la posibilidad de incluir su antiguo vehículo en nuestro catálogo a cambio de recibir una comisión proporcional a la venta."
 COMPRAMOS_TU_COCHE_TEXTO2 = ""  # Intencionado.
 COMPRAMOS_TU_COCHE_CALLOUT1 = "Su vehículo formará parte de la exposición"

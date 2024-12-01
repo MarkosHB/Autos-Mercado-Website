@@ -15,4 +15,5 @@ def pasos_a_la_carta(header1: str, header2: str, header3: str,
             texto2,
             texto3,
         ),
+        width="100%",
     )

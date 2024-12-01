@@ -7,9 +7,9 @@ from Autos_Mercado_Website.styles.styles import Spacing
 
 def header(pagina: str, titulo: str, text1: str, text2: str) -> rx.Component:
     return rx.box(
-        badge_chip("Escríbenos con confianza", "brown") if pagina == "COMPRAMOS_TU_COCHE" else rx.fragment(),
+        badge_chip("No dudes en contactarnos", "brown") if pagina == "COMPRAMOS_TU_COCHE" else rx.fragment(),
         badge_chip("Novedosa opción exclusiva", "violet") if pagina == "COCHES_A_LA_CARTA" else rx.fragment(),
-        badge_chip("No dudes en contactarnos", "pink") if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
+        badge_chip("Escríbenos con confianza", "pink") if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
         rx.box(
             dark_mode_toggle(),
             position="absolute",

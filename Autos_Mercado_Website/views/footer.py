@@ -6,7 +6,6 @@ from Autos_Mercado_Website.styles.styles import Size, Spacing, Color, TextColor,
 
 def footer() -> rx.Component:
     return rx.flex(
-        #social_link("Map-pin", TextColor.YELLOW, None, const.DIRECCION),
         social_link("Smartphone", TextColor.GREEN, None, const.MOVIL1),
         social_link("Smartphone", TextColor.GREEN, None, const.MOVIL2),
         social_link("Phone", TextColor.GREEN, None, const.FIJO),

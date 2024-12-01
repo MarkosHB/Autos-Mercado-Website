@@ -49,12 +49,12 @@ def form() -> rx.Component:
                 ),
                 rx.vstack(
                     rx.heading(
-                        "Send us a message",
+                        "Contacte con nuestro equipo",
                         size="4",
                         weight="bold",
                     ),
                     rx.text(
-                        "Fill the form to contact us",
+                        "Indíquenos el motivo por el que nos escribe.",
                         size="2",
                     ),
                     spacing="1",
@@ -67,18 +67,28 @@ def form() -> rx.Component:
             ),
             rx.form.root(
                 rx.flex(
+                    rx.select(
+                        [
+                            "Interesad@ en un vehículo de Stock",
+                            "Servicio: Coches a la Carta", "Servicio: Compramos tu Coche",
+                            "Consulta adicional no contemplada"
+                         ],
+                        default_value="Interesad@ en un vehículo de Stock",
+                        name="motivo de consulta",
+                        required=True,
+                    ),
                     rx.flex(
                         form_field(
-                            "First Name",
-                            "First Name",
+                            "Nombre del interesado.",
+                            "Su nombre de pila",
                             "text",
-                            "first_name",
+                            "Nombre del interesado",
                         ),
                         form_field(
-                            "Last Name",
-                            "Last Name",
+                            "Apellidos",
+                            "Su apellido completo",
                             "text",
-                            "last_name",
+                            "Apellidos",
                         ),
                         spacing="3",
                         flex_direction=[
@@ -89,13 +99,13 @@ def form() -> rx.Component:
                     ),
                     rx.flex(
                         form_field(
-                            "Email",
-                            "user@reflex.dev",
-                            "email",
+                            "Correo electrónico",
+                            "Su email de uso habitual",
+                            "text",
                             "email",
                         ),
                         form_field(
-                            "Phone", "Phone", "tel", "phone"
+                            "Teléfono", "Su número de teléfono", "text", "telefono"
                         ),
                         spacing="3",
                         flex_direction=[
@@ -106,7 +116,7 @@ def form() -> rx.Component:
                     ),
                     rx.flex(
                         rx.text(
-                            "Message",
+                            "Mensaje",
                             style={
                                 "font-size": "15px",
                                 "font-weight": "500",
@@ -114,15 +124,15 @@ def form() -> rx.Component:
                             },
                         ),
                         rx.text_area(
-                            placeholder="Message",
-                            name="message",
+                            placeholder="Motivo de contacto, datos relevantes...",
+                            name="mensaje",
                             resize="vertical",
                         ),
                         direction="column",
                         spacing="1",
                     ),
                     rx.form.submit(
-                        rx.button("Submit"),
+                        rx.button("Enviar información"),
                         as_child=True,
                     ),
                     direction="column",
@@ -132,7 +142,7 @@ def form() -> rx.Component:
                 on_submit=lambda form_data: rx.window_alert(
                     form_data.to_string()
                 ),
-                reset_on_submit=False,
+                reset_on_submit=True,
             ),
             width="100%",
             direction="column",

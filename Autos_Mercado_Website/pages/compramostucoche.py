@@ -32,7 +32,7 @@ def compramostucoche() -> rx.Component:
                 ),
                 rx.center(
                     rx.image(
-                        src="/fachada.jpg",
+                        src="/antigua_fachada.png",
                         border_radius="20px 20px",
                         border="1px solid gray",
 
