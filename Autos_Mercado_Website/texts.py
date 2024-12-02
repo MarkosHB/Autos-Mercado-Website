@@ -38,3 +38,10 @@ VENDEMOS_SU_VEHICULO_LISTADO2 = "Nos encargamos de todos los trámites y gestion
 SOBRE_NOSOTROS_TITULO = "Conozca las instalaciones y a nuestro personal"
 SOBRE_NOSOTROS_TEXTO1 = "Autos Mercado es un concesionario particular de compra-venta de coches ubicado en Vélez-Málaga (España). Estamos entre los concesionarios de automóviles más confiables y elegidos por los usuarios, con un amplio historial de clientes satisfechos."
 SOBRE_NOSOTROS_TEXTO2 = "Ofrecemos un servicio completo y personalizado, ya sea para comprar un coche de segunda mano, nuevo de importación o si desea vender su coche."
+
+
+# ---------
+# Contacto.
+# ---------
+CONTACTO_TITULO = "¡Gracias por su interés!"
+CONTACTO_TEXTO1 = "Por favor, proceda a rellenar el cuestionario detallado a continuación."

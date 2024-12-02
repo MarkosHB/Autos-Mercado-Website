@@ -6,3 +6,4 @@ class Route(Enum):
     COCHESALACARTA = "/coches-a-la-carta"
     VENDEMOSSUVEHICULO = "/vendemos-su-vehiculo"
     SOBRENOSOTROS = "/sobre-nosotros"
+    CONTACTO = "/contacto"

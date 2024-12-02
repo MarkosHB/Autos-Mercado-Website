@@ -1,4 +1,6 @@
 import reflex as rx
+
+from Autos_Mercado_Website.components.form import form
 from Autos_Mercado_Website.routes import Route
 from Autos_Mercado_Website.styles.colors import TextColor
 from Autos_Mercado_Website.styles.styles import Size, Spacing, Color
@@ -22,6 +24,7 @@ def navbar(route: Route) -> rx.Component:
                     _menu_cochesalacarta(route),
                     _menu_vendemossuvehiculo(route),
                     _menu_sobrenosotros(route),
+                    _dialog_formulario(),
                     spacing=Spacing.BIG.value
                 ),
                 width="100%",
@@ -49,6 +52,10 @@ def navbar(route: Route) -> rx.Component:
                         ),
                         rx.menu.item(
                             _menu_sobrenosotros(route),
+                            backbround="transparent"
+                        ),
+                        rx.menu.item(
+                            _pagina_formulario(route),
                             backbround="transparent"
                         ),
                         background=Color.SECONDARY.value,
@@ -112,4 +119,39 @@ def _menu_sobrenosotros(route: Route) -> rx.Component:
         ),
         href=Route.SOBRENOSOTROS.value
     )
+
+
+def _pagina_formulario(route: Route) -> rx.Component:
+    # Funcion para crear una pagina solo en modo movil.
+    return rx.link(
+        title(
+            "Contacto",
+            size=[Size.DEFAULT_BIG.value],
+            color=TextColor.RED if route == Route.CONTACTO else TextColor.PRIMARY
+        ),
+        href=Route.CONTACTO.value
+    )
+
+
+def _dialog_formulario() -> rx.Component:
+    # Funcion para crear un dialog en desktop y tablet.
+    return rx.dialog.root(
+        rx.dialog.trigger(
+            rx.button(
+                title(
+                    "Contacto",
+                    size=[Size.DEFAULT_BIG.value],
+                ),
+                color_scheme="blue",
+                variant="classic",
+                radius="large",
+                size="3",
+            ),
+        ),
+        rx.dialog.content(
+            form(),
+        ),
+        margin="20px"
+    )
+
 

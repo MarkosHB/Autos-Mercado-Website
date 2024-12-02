@@ -2,9 +2,10 @@ import reflex as rx
 
 import Autos_Mercado_Website.utils as utils
 from Autos_Mercado_Website.components.form import form
+from Autos_Mercado_Website.components.social_link import social_link
 from Autos_Mercado_Website.routes import Route
-from Autos_Mercado_Website.styles.colors import Color
-
+from Autos_Mercado_Website.styles.colors import Color, TextColor
+import Autos_Mercado_Website.constants as const
 
 from Autos_Mercado_Website.styles.styles import Spacing
 
@@ -34,20 +35,32 @@ def sobrenosotros() -> rx.Component:
                     text1=texto.SOBRE_NOSOTROS_TEXTO1,
                     text2=texto.SOBRE_NOSOTROS_TEXTO2,
                 ),
-                rx.center(
+                rx.vstack(
+                    rx.callout(
+                        rx.text(
+                            const.DIRECCION,
+                            size="4",
+                        ),
+                        size="3",
+                        icon="Map-pin",
+                        variant="soft",
+                        color_scheme="blue",
+                    ),
                     rx.image(
                         src="/interior.jpg",
                         border_radius="20px 20px",
                         border="1px solid gray",
-
+                    ),
+                    rx.flex(
+                        data_list(),
+                        data_list(),
+                        wrap="wrap",
                     ),
                     width="100%",
+                    align="center",
+                    spacing=Spacing.BIG.value,
                     padding="0px 32px 32px 32px",
                 ),
-                #data_list(),
-                #TODO
-                # social_link("Map-pin", TextColor.YELLOW, None, const.DIRECCION),
-                form(),
                 footer(),
                 spacing=Spacing.DEFAULT.value,
                 align="center",

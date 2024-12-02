@@ -32,6 +32,11 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
                 gap=Size.BIG.value,
             ) if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
 
+            rx.vstack(
+                rectangle_content(texto1),
+                gap=Size.DEFAULT.value,
+            ) if pagina == "CONTACTO" else rx.fragment(),
+
         ),
 
         rx.mobile_only(
@@ -55,6 +60,11 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
                 rectangle_content(texto2),
                 gap=Size.ZERO.value,
             ) if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
+
+            rx.vstack(
+                rectangle_content(texto1),
+                gap=Size.DEFAULT.value,
+            ) if pagina == "CONTACTO" else rx.fragment(),
 
         ),
         width="100%",
