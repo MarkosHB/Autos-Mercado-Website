@@ -1,7 +1,6 @@
 import reflex as rx
 
 from Autos_Mercado_Website.components.accordion import accordion
-from Autos_Mercado_Website.styles.styles import Size
 
 
 def pasos_a_la_carta(header1: str, header2: str, header3: str,

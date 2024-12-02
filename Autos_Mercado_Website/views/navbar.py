@@ -20,7 +20,7 @@ def navbar(route: Route) -> rx.Component:
                     rx.spacer(),
                     _menu_inicio(route),
                     _menu_cochesalacarta(route),
-                    _menu_compramostucoche(route),
+                    _menu_vendemossuvehiculo(route),
                     _menu_sobrenosotros(route),
                     spacing=Spacing.BIG.value
                 ),
@@ -44,7 +44,7 @@ def navbar(route: Route) -> rx.Component:
                             backbround="transparent"
                         ),
                         rx.menu.item(
-                            _menu_compramostucoche(route),
+                            _menu_vendemossuvehiculo(route),
                             backbround="transparent"
                         ),
                         rx.menu.item(
@@ -84,7 +84,7 @@ def _menu_inicio(route: Route) -> rx.Component:
 def _menu_cochesalacarta(route: Route) -> rx.Component:
     return rx.link(
         title(
-            "Coches a la Carta",
+            "Coches a la carta",
             size=[Size.DEFAULT_BIG.value],
             color=TextColor.RED if route == Route.COCHESALACARTA else TextColor.PRIMARY
         ),
@@ -92,14 +92,14 @@ def _menu_cochesalacarta(route: Route) -> rx.Component:
     )
 
 
-def _menu_compramostucoche(route: Route) -> rx.Component:
+def _menu_vendemossuvehiculo(route: Route) -> rx.Component:
     return rx.link(
         title(
-            "Compramos tu Coche",
+            "Vendemos su vehículo",
             size=[Size.DEFAULT_BIG.value],
-            color=TextColor.RED if route == Route.COMPRAMOSTUCOCHE else TextColor.PRIMARY
+            color=TextColor.RED if route == Route.VENDEMOSSUVEHICULO else TextColor.PRIMARY
         ),
-        href=Route.COMPRAMOSTUCOCHE.value
+        href=Route.VENDEMOSSUVEHICULO.value
     )
 
 

@@ -70,7 +70,8 @@ def form() -> rx.Component:
                     rx.select(
                         [
                             "Interesad@ en un vehículo de Stock",
-                            "Servicio: Coches a la Carta", "Servicio: Compramos tu Coche",
+                            "Servicio: Coches a la carta",
+                            "Servicio: Vendemos su vehículo",
                             "Consulta adicional no contemplada"
                          ],
                         default_value="Interesad@ en un vehículo de Stock",
@@ -85,7 +86,7 @@ def form() -> rx.Component:
                             "Nombre del interesado",
                         ),
                         form_field(
-                            "Apellidos",
+                            "Apellidos.",
                             "Su apellido completo",
                             "text",
                             "Apellidos",
@@ -99,13 +100,13 @@ def form() -> rx.Component:
                     ),
                     rx.flex(
                         form_field(
-                            "Correo electrónico",
+                            "Correo electrónico.",
                             "Su email de uso habitual",
                             "text",
                             "email",
                         ),
                         form_field(
-                            "Teléfono", "Su número de teléfono", "text", "telefono"
+                            "Teléfono.", "Su número de teléfono", "text", "telefono"
                         ),
                         spacing="3",
                         flex_direction=[
@@ -116,7 +117,7 @@ def form() -> rx.Component:
                     ),
                     rx.flex(
                         rx.text(
-                            "Mensaje",
+                            "Mensaje.",
                             style={
                                 "font-size": "15px",
                                 "font-weight": "500",

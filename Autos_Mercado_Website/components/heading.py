@@ -21,10 +21,10 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
 
             rx.vstack(
                 rectangle_content(texto1),
-                listado_compramos_tu_coche(),
-                callout_compramos_tu_coche(),
+                listado_vendemos_su_vehiculo(),
+                callout_vendemos_su_vehiculo(),
                 gap=Size.DEFAULT.value,
-            ) if pagina == "COMPRAMOS_TU_COCHE" else rx.fragment(),
+            ) if pagina == "VENDEMOS_SU_VEHICULO" else rx.fragment(),
 
             rx.hstack(
                 rectangle_content(texto1),
@@ -45,10 +45,10 @@ def heading(pagina: str, titulo: str, texto1="", texto2="") -> rx.Component:
 
             rx.vstack(
                 rectangle_content(texto1),
-                listado_compramos_tu_coche(),
-                callout_compramos_tu_coche(),
+                listado_vendemos_su_vehiculo(),
+                callout_vendemos_su_vehiculo(),
                 gap=Size.DEFAULT.value,
-            ) if pagina == "COMPRAMOS_TU_COCHE" else rx.fragment(),
+            ) if pagina == "VENDEMOS_SU_VEHICULO" else rx.fragment(),
 
             rx.vstack(
                 rectangle_content(texto1),
@@ -73,11 +73,11 @@ def callout_coches_a_la_carta() -> rx.Component:
     )
 
 
-def callout_compramos_tu_coche() -> rx.Component:
+def callout_vendemos_su_vehiculo() -> rx.Component:
     return rx.flex(
         rx.callout(
             rx.text(
-                texto.COMPRAMOS_TU_COCHE_CALLOUT1,
+                texto.VENDEMOS_SU_VEHICULO_CALLOUT1,
                 size="3",
             ),
             icon="check",
@@ -85,7 +85,7 @@ def callout_compramos_tu_coche() -> rx.Component:
         ),
         rx.callout(
             rx.text(
-                texto.COMPRAMOS_TU_COCHE_CALLOUT2,
+                texto.VENDEMOS_SU_VEHICULO_CALLOUT2,
                 size="3",
             ),
             icon="smile",
@@ -97,17 +97,17 @@ def callout_compramos_tu_coche() -> rx.Component:
     )
 
 
-def listado_compramos_tu_coche() -> rx.Component:
+def listado_vendemos_su_vehiculo() -> rx.Component:
     return rx.list.unordered(
         rx.list.item(
             rx.text(
-                texto.COMPRAMOS_TU_COCHE_LISTADO1,
+                texto.VENDEMOS_SU_VEHICULO_LISTADO1,
                 size="4",
             ),
         ),
         rx.list.item(
             rx.text(
-                texto.COMPRAMOS_TU_COCHE_LISTADO2,
+                texto.VENDEMOS_SU_VEHICULO_LISTADO2,
                 size="4",
             ),
         ),

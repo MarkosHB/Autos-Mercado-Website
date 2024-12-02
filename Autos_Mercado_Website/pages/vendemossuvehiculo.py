@@ -11,24 +11,24 @@ from Autos_Mercado_Website.views.footer import footer
 
 import Autos_Mercado_Website.texts as texto
 
-ROUTE = Route.COMPRAMOSTUCOCHE
+ROUTE = Route.VENDEMOSSUVEHICULO
 
 
 @rx.page(
-    title=utils.title_compramostucoche,
+    title=utils.title_vendemossuvehiculo,
     route=ROUTE.value,
 )
-def compramostucoche() -> rx.Component:
+def vendemossuvehiculo() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(ROUTE),
         rx.center(
             rx.vstack(
                 header(
-                    pagina="COMPRAMOS_TU_COCHE",
-                    titulo=texto.COMPRAMOS_TU_COCHE_TITULO,
-                    text1=texto.COMPRAMOS_TU_COCHE_TEXTO1,
-                    text2=texto.COMPRAMOS_TU_COCHE_TEXTO2,
+                    pagina="VENDEMOS_SU_VEHICULO",
+                    titulo=texto.VENDEMOS_SU_VEHICULO_TITULO,
+                    text1=texto.VENDEMOS_SU_VEHICULO_TEXTO1,
+                    text2=texto.VENDEMOS_SU_VEHICULO_TEXTO2,
                 ),
                 rx.center(
                     rx.image(
