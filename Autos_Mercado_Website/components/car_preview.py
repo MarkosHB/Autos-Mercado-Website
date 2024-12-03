@@ -1,20 +1,30 @@
 import reflex as rx
 
+from Autos_Mercado_Website.styles.styles import Spacing
+
 
 # TODO rx.skeleton()
-def car_preview() -> rx.Component:
-    return rx.card(
-        rx.inset(
-            rx.image(
-                src="/fachada.jpg",
-                width="100%",
-                height="auto",
+def car_preview(idx: int, modelo: str, ) -> rx.Component:
+    return rx.link(
+        rx.card(
+            rx.inset(
+                rx.image(
+                    src="/logo.png",
+                    width="100%",
+                    height="auto",
+                ),
+                side="top",
+                pb="current",
+                clip="padding-box",
             ),
-            side="top",
-            pb="current",
+            rx.heading(
+                modelo
+            ),
+            rx.text(
+                "Prueba",
+            ),
+            width="100%",
+            spacing=Spacing.DEFAULT.value,
         ),
-        rx.text(
-            "Reflex is a web framework that allows developers to build their app in pure Python."
-        ),
-        width="25vw",
+        href="",
     )

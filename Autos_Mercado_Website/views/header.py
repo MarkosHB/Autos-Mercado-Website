@@ -8,7 +8,7 @@ def header(pagina: str, titulo: str, text1: str, text2: str) -> rx.Component:
     return rx.box(
         badge_chip("Novedosa opción exclusiva", "violet") if pagina == "COCHES_A_LA_CARTA" else rx.fragment(),
         badge_chip("No dude en preguntarnos", "brown") if pagina == "VENDEMOS_SU_VEHICULO" else rx.fragment(),
-        badge_chip("¡Esperamos su visita!", "pink") if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
+        badge_chip("Esperamos su visita", "pink") if pagina == "SOBRE_NOSOTROS" else rx.fragment(),
         badge_chip("Escríbanos con confianza", "red") if pagina == "CONTACTO" else rx.fragment(),
         rx.box(
             dark_mode_toggle(),
