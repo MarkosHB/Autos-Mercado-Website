@@ -1,5 +1,5 @@
 import reflex as rx
-from Autos_Mercado_Website.styles.colors import Color, TextColor
+from Autos_Mercado_Website.styles.styles import Color, TextColor
 
 
 def social_link(icono: str, color: TextColor, link: str, texto: str) -> rx.Component:

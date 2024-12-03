@@ -2,8 +2,7 @@ import reflex as rx
 
 from Autos_Mercado_Website.components.form import form
 from Autos_Mercado_Website.routes import Route
-from Autos_Mercado_Website.styles.colors import TextColor
-from Autos_Mercado_Website.styles.styles import Size, Spacing, Color
+from Autos_Mercado_Website.styles.styles import Size, Spacing, Color, TextColor
 from Autos_Mercado_Website.components.title import title
 
 FONT_SIZE = [Size.DEFAULT_MEDIUM.value, Size.DEFAULT_BIG.value]

@@ -1,7 +1,7 @@
 import reflex as rx
 import Autos_Mercado_Website.constants as const
 from Autos_Mercado_Website.components.social_link import social_link
-from Autos_Mercado_Website.styles.styles import Size, Spacing, Color, TextColor, Font
+from Autos_Mercado_Website.styles.styles import Size, Spacing, Color, TextColor
 
 
 def footer() -> rx.Component:

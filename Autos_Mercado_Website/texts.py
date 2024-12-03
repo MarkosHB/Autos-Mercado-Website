@@ -1,7 +1,8 @@
-# ------
-# Index.
-# ------
+# -------
+# Inicio.
+# -------
 CATALOGO_TITULO = "Descubra nuestro catálogo de vehículos"
+
 
 # ------------------
 # Coches a la Carta.

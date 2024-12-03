@@ -1,12 +1,10 @@
 import reflex as rx
 
 import Autos_Mercado_Website.utils as utils
-from Autos_Mercado_Website.components.form import form
-from Autos_Mercado_Website.components.social_link import social_link
 from Autos_Mercado_Website.routes import Route
-from Autos_Mercado_Website.styles.colors import Color, TextColor
-import Autos_Mercado_Website.constants as const
 
+import Autos_Mercado_Website.texts as texto
+import Autos_Mercado_Website.constants as const
 from Autos_Mercado_Website.styles.styles import Spacing
 
 from Autos_Mercado_Website.views.navbar import navbar
@@ -14,7 +12,6 @@ from Autos_Mercado_Website.views.header import header
 from Autos_Mercado_Website.views.footer import footer
 
 from Autos_Mercado_Website.components.data_list import data_list
-import Autos_Mercado_Website.texts as texto
 
 ROUTE = Route.SOBRENOSOTROS
 
