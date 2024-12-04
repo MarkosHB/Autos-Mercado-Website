@@ -1,15 +1,16 @@
 import reflex as rx
 
 from Autos_Mercado_Website.styles.styles import Spacing
+from Autos_Mercado_Website.supabase.vehiculo import Vehiculo
 
 
 # TODO rx.skeleton()
-def car_preview(idx: int, modelo: str, ) -> rx.Component:
+def car_preview(vehiculo: Vehiculo) -> rx.Component:
     return rx.link(
         rx.card(
             rx.inset(
                 rx.image(
-                    src="/logo.png",
+                    src="/lo" + "go.png",
                     width="100%",
                     height="auto",
                 ),
@@ -18,10 +19,7 @@ def car_preview(idx: int, modelo: str, ) -> rx.Component:
                 clip="padding-box",
             ),
             rx.heading(
-                modelo
-            ),
-            rx.text(
-                "Prueba",
+                vehiculo.modelo
             ),
             width="100%",
             spacing=Spacing.DEFAULT.value,
