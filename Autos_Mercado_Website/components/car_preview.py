@@ -6,26 +6,23 @@ from Autos_Mercado_Website.supabase.vehiculo import Vehiculo
 
 
 def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
-    return rx.skeleton(
-        rx.link(
-            rx.card(
-                rx.inset(
-                    rx.image(
-                        src=PageState.preview_images[idx],
-                        width="100%",
-                        height="auto",
-                    ),
-                    side="top",
-                    pb="current",
-                    clip="padding-box",
+    return rx.link(
+        rx.card(
+            rx.inset(
+                rx.image(
+                    src=PageState.preview_images[idx],
+                    width="100%",
+                    height="auto",
                 ),
-                rx.heading(
-                    vehiculo.imagen_public_url
-                ),
-                width="100%",
-                spacing=Spacing.DEFAULT.value,
+                side="top",
+                pb="current",
+                clip="padding-box",
             ),
-            href=vehiculo.imagen_public_url,
+            rx.heading(
+                vehiculo.modelo
+            ),
+            width="100%",
+            spacing=Spacing.DEFAULT.value,
         ),
-        loading=PageState.loading,
+        href=vehiculo.imagen_public_url,
     )
