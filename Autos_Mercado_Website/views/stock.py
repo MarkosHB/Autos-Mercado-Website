@@ -2,7 +2,7 @@ import reflex as rx
 
 from Autos_Mercado_Website.components.car_preview import car_preview
 from Autos_Mercado_Website.styles.styles import Spacing, Size
-from Autos_Mercado_Website.supabase.StatePage import PageState
+from Autos_Mercado_Website.supabase.PageState import PageState
 
 
 def stock() -> rx.Component:
@@ -11,7 +11,7 @@ def stock() -> rx.Component:
             rx.grid(
                 rx.foreach(
                     PageState.vehiculo_info,
-                    car_preview,
+                    lambda coche, index: car_preview(coche, index),
                 ),
                 gap="2rem",
                 grid_template_columns=[
@@ -32,4 +32,3 @@ def stock() -> rx.Component:
         ),
         on_mount=PageState.get_data
     )
-

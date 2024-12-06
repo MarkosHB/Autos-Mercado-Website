@@ -1,28 +1,31 @@
 import reflex as rx
 
 from Autos_Mercado_Website.styles.styles import Spacing
+from Autos_Mercado_Website.supabase.PageState import PageState
 from Autos_Mercado_Website.supabase.vehiculo import Vehiculo
 
 
-# TODO rx.skeleton()
-def car_preview(vehiculo: Vehiculo) -> rx.Component:
-    return rx.link(
-        rx.card(
-            rx.inset(
-                rx.image(
-                    src="/lo" + "go.png",
-                    width="100%",
-                    height="auto",
+def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
+    return rx.skeleton(
+        rx.link(
+            rx.card(
+                rx.inset(
+                    rx.image(
+                        src=PageState.preview_images[idx],
+                        width="100%",
+                        height="auto",
+                    ),
+                    side="top",
+                    pb="current",
+                    clip="padding-box",
                 ),
-                side="top",
-                pb="current",
-                clip="padding-box",
+                rx.heading(
+                    vehiculo.imagen_public_url
+                ),
+                width="100%",
+                spacing=Spacing.DEFAULT.value,
             ),
-            rx.heading(
-                vehiculo.modelo
-            ),
-            width="100%",
-            spacing=Spacing.DEFAULT.value,
+            href=vehiculo.imagen_public_url,
         ),
-        href="",
+        loading=PageState.loading,
     )
