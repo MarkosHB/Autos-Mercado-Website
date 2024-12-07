@@ -30,7 +30,8 @@ class SupabaseAPI:
                 vehiculo_data.append(
                     Vehiculo(
                         modelo=coche["nombre"],
-                        imagen_public_url=self.imagen_preview(coche["imagen"])
+                        url_modelo=str(coche["nombre"]).replace(" ", "_"),
+                        imagen_public_url=self.imagen_preview(coche["imagen"]),
                     )
                 )
 

@@ -62,7 +62,7 @@ def stock() -> rx.Component:
             rx.flex(
                 rx.grid(
                     rx.foreach(
-                        PageState.vehiculo_info,
+                        PageState.vehiculos_info,
                         lambda coche, index: car_preview(coche, index),
                     ),
                     gap="2rem",
@@ -81,6 +81,6 @@ def stock() -> rx.Component:
                 padding=Size.BIG.value,
                 flex_wrap="wrap",
             ),
-            on_mount=PageState.get_data
+            # on_mount=PageState.get_data
         ),
     )

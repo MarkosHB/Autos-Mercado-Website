@@ -4,5 +4,5 @@ from .SupabaseAPI import SupabaseAPI
 SUPABASE_API = SupabaseAPI()
 
 
-async def coche_info() -> list[Vehiculo]:
+async def coches_info() -> list[Vehiculo]:
     return SUPABASE_API.fetch_data()

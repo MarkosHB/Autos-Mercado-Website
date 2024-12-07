@@ -14,3 +14,5 @@ title_vendemossuvehiculo = "Vendemos su vehículo | Autos-Mercado"
 title_sobrenosotros = "Sobre nosotros | Autos-Mercado"
 
 title_contacto = "Contacto | Autos-Mercado"
+
+title_detallesvehiculo = "Detalles del vehículo | Autos-Mercado"
