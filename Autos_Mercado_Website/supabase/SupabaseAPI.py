@@ -21,7 +21,13 @@ class SupabaseAPI:
             )
 
     def fetch_data(self):
-        response = self.supabase.table(self.SUPABASE_TABLE).select("*").execute()
+        response = (
+            self.supabase.table(self.SUPABASE_TABLE)
+            .select("nombre, imagen", "precio_venta", "precio_financiado")
+            .filter('check_vendido', 'eq', False)
+            .filter('check_entregado', 'eq', False)
+            .execute()
+        )
 
         vehiculo_data = []
 
@@ -32,6 +38,8 @@ class SupabaseAPI:
                         modelo=coche["nombre"],
                         url_modelo=str(coche["nombre"]).replace(" ", "_"),
                         imagen_public_url=self.imagen_preview(coche["imagen"]),
+                        precio_venta=coche["precio_venta"],
+                        precio_financiado=coche["precio_financiado"],
                     )
                 )
 

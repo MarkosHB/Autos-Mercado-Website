@@ -1,6 +1,5 @@
 import reflex as rx
 
-from Autos_Mercado_Website.routes import Route
 from Autos_Mercado_Website.styles.styles import Spacing
 from Autos_Mercado_Website.supabase.PageState import PageState
 from Autos_Mercado_Website.supabase.vehiculo import Vehiculo
@@ -22,7 +21,12 @@ def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
             rx.heading(
                 vehiculo.modelo
             ),
-            rx.text(idx),
+            rx.text(
+                vehiculo.precio_venta
+            ),
+            rx.text(
+                vehiculo.precio_financiado
+            ),
             width="100%",
             spacing=Spacing.DEFAULT.value,
         ),
