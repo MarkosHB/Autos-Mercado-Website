@@ -18,19 +18,17 @@ ROUTE = Route.DETALLESVEHICULO
     route=ROUTE.value,
 )
 def detallesvehiculo() -> rx.Component:
-    category = rx.State.category
-
     return rx.box(
         utils.lang(),
         navbar(ROUTE),
         rx.center(
             rx.vstack(
-                rx.heading(f"Detalles del Vehículo: {category}"),
-
+                rx.heading(f"Detalles del Vehículo: {PageState.vehiculo_info.modelo}"),
                 footer(),
                 spacing=Spacing.DEFAULT_BIG.value,
                 align="center",
                 width="100%",
+                on_mount=PageState.get_car,
             )
         )
     )

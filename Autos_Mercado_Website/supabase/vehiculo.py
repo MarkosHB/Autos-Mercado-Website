@@ -3,8 +3,24 @@ from typing import Optional
 
 
 class Vehiculo(rx.Base):
+    # Datos generales.
     modelo: str
     url_modelo: str
     imagen_public_url: str
+
+    # Datos para la venta.
     precio_venta: Optional[int]
     precio_financiado: Optional[int]
+
+    # Detalles del vehiculo.
+    coches_punto_net: Optional[str]
+    milanuncios: Optional[str]
+    anio: Optional[str]
+    tipo: Optional[str]
+    combustible: Optional[str]
+    transmision: Optional[str]
+    kilometraje: Optional[str]
+    caballos: Optional[str]
+    cilindrada: Optional[str]
+    puertas: Optional[str]
+    color: Optional[str]
