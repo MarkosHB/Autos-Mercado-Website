@@ -48,11 +48,6 @@ def sobrenosotros() -> rx.Component:
                         border_radius="20px 20px",
                         border="1px solid gray",
                     ),
-                    rx.flex(
-                        data_list(),
-                        data_list(),
-                        wrap="wrap",
-                    ),
                     width="100%",
                     align="center",
                     spacing=Spacing.BIG.value,

@@ -48,7 +48,8 @@ class SupabaseAPI:
     def fetch_car(self, modelo: str):
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
-            .select("nombre, imagen", "precio_venta", "precio_financiado")
+            .select("nombre, imagen", "precio_venta", "precio_financiado", "coches_punto_net", "milanuncios", "anio",
+                    "tipo", "combustible", "transmision", "kilometraje", "caballos", "cilindrada", "puertas", "color")
             .filter('nombre', 'eq', modelo)
             .filter('check_anunciado', 'eq', True)
             .filter('check_vendido', 'eq', False)
@@ -65,6 +66,17 @@ class SupabaseAPI:
                     imagen_public_url=self.imagen_preview(coche["imagen"]),
                     precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
                     precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
+                    coches_punto_net=coche["coches_punto_net"],
+                    milanuncios=coche["milanuncios"],
+                    anio=coche["anio"],
+                    tipo=coche["tipo"],
+                    combustible=coche["combustible"],
+                    transmision=coche["transmision"],
+                    kilometraje=coche["kilometraje"],
+                    caballos=coche["caballos"],
+                    cilindrada=coche["cilindrada"],
+                    puertas=coche["puertas"],
+                    color=coche["color"],
                 )
 
         return vehiculo

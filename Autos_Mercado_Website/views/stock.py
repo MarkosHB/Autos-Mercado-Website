@@ -54,7 +54,7 @@ def stock() -> rx.Component:
                 padding=Size.BIG.value,
                 flex_wrap="wrap",
             ),
-            # on_mount=PageState.get_data
+            on_mount=PageState.get_data
         ),
 
         # Una vez cargado, mostrar el listado de vehiculos en Stock.
