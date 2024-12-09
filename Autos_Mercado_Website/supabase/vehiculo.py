@@ -9,8 +9,8 @@ class Vehiculo(rx.Base):
     imagen_public_url: str
 
     # Datos para la venta.
-    precio_venta: Optional[int]
-    precio_financiado: Optional[int]
+    precio_venta: str
+    precio_financiado: str
 
     # Detalles del vehiculo.
     coches_punto_net: Optional[str]

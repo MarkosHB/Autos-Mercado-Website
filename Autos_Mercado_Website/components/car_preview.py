@@ -6,8 +6,8 @@ from Autos_Mercado_Website.supabase.vehiculo import Vehiculo
 
 
 def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
-    return rx.link(
-        rx.card(
+    return rx.card(
+        rx.link(
             rx.inset(
                 rx.image(
                     src=PageState.preview_images[idx],
@@ -18,17 +18,31 @@ def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
                 pb="current",
                 clip="padding-box",
             ),
-            rx.heading(
-                vehiculo.modelo
-            ),
-            rx.text(
-                vehiculo.precio_venta
-            ),
-            rx.text(
-                vehiculo.precio_financiado
-            ),
-            width="100%",
-            spacing=Spacing.DEFAULT.value,
+            href=f"/detalles-del-vehiculo/{vehiculo.url_modelo}",
         ),
-        href=f"/detalles-del-vehiculo/{vehiculo.url_modelo}",
+        rx.vstack(
+            rx.link(
+                rx.heading(
+                    vehiculo.modelo
+                ),
+                href=f"/detalles-del-vehiculo/{vehiculo.url_modelo}",
+            ),
+            rx.separator(),
+            rx.spacer(),
+            rx.text(
+                f"{vehiculo.precio_venta} €",
+                weight="bold",
+                align="right",
+                size="5",
+            ),
+            rx.text(
+                f"Financiado por {vehiculo.precio_financiado} €/mes",
+                align="center",
+                weight="right",
+                size="3",
+            ),
+
+        ),
+        width="100%",
+        spacing=Spacing.DEFAULT.value,
     )

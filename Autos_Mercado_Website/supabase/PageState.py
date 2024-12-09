@@ -26,6 +26,7 @@ class PageState(rx.State):
     modelo: str = None
     image: ImageFile = None
 
+    @rx.event
     async def get_data(self):
         self.loading = True
 
@@ -35,13 +36,14 @@ class PageState(rx.State):
 
         self.loading = False
 
+    @rx.event
     async def get_car(self):
         self.car_loading = True
 
         args = self.router.page.params
         modelo = args.get("category", [])
 
-        self.vehiculo_info = await coche_info(modelo[0])
+        self.vehiculo_info = await coche_info(modelo[0].replace("-", " "))
         self.image = obtener_imagen(self.vehiculo_info.imagen_public_url)
 
         self.car_loading = False

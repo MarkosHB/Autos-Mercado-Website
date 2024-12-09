@@ -24,7 +24,7 @@ class SupabaseAPI:
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
             .select("nombre, imagen", "precio_venta", "precio_financiado")
-            .filter('check_anunciado', 'eq', False)  # TODO True
+            .filter('check_anunciado', 'eq', True)
             .filter('check_vendido', 'eq', False)
             .execute()
         )
@@ -36,27 +36,24 @@ class SupabaseAPI:
                 vehiculo_data.append(
                     Vehiculo(
                         modelo=coche["nombre"],
-                        url_modelo=str(coche["nombre"]).replace(" ", "_"),
+                        url_modelo=str(coche["nombre"]).replace(" ", "-"),
                         imagen_public_url=self.imagen_preview(coche["imagen"]),
-                        precio_venta=coche["precio_venta"],
-                        precio_financiado=coche["precio_financiado"],
+                        precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
+                        precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
                     )
                 )
 
         return vehiculo_data
 
     def fetch_car(self, modelo: str):
-        print(modelo)
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
             .select("nombre, imagen", "precio_venta", "precio_financiado")
-            .filter('nombre', 'eq', modelo.replace("_", " "))
-            .filter('check_anunciado', 'eq', False)  # TODO True
+            .filter('nombre', 'eq', modelo)
+            .filter('check_anunciado', 'eq', True)
             .filter('check_vendido', 'eq', False)
             .execute()
         )
-
-        print(response)
 
         vehiculo = None
 
@@ -64,10 +61,10 @@ class SupabaseAPI:
             for coche in response.data:
                 vehiculo = Vehiculo(
                     modelo=coche["nombre"],
-                    url_modelo=str(coche["nombre"]).replace(" ", "_"),
+                    url_modelo=str(coche["nombre"]).replace(" ", "-"),
                     imagen_public_url=self.imagen_preview(coche["imagen"]),
-                    precio_venta=coche["precio_venta"],
-                    precio_financiado=coche["precio_financiado"],
+                    precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
+                    precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
                 )
 
         return vehiculo
