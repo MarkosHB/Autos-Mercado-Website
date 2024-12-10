@@ -6,6 +6,7 @@ import Autos_Mercado_Website.utils as utils
 from Autos_Mercado_Website.components.dark_mode_toggle import dark_mode_toggle
 from Autos_Mercado_Website.styles.styles import Spacing, Size
 import Autos_Mercado_Website.texts as texto
+from Autos_Mercado_Website.supabase.PageState import PageState
 
 from Autos_Mercado_Website.views.navbar import navbar
 from Autos_Mercado_Website.views.footer import footer
@@ -16,7 +17,8 @@ ROUTE = Route.INDEX
 
 
 @rx.page(
-    title=utils.title_index
+    title=utils.title_index,
+    on_load=PageState.get_data
 )
 def index() -> rx.Component:
     return rx.box(

@@ -5,7 +5,6 @@ from Autos_Mercado_Website.styles.styles import Spacing, Size
 from Autos_Mercado_Website.supabase.PageState import PageState
 
 
-@rx.page(on_load=PageState.get_data)
 def stock() -> rx.Component:
     return rx.cond(
         # https://reflex.dev/docs/library/dynamic-rendering/cond/
@@ -54,7 +53,6 @@ def stock() -> rx.Component:
                 padding=Size.BIG.value,
                 flex_wrap="wrap",
             ),
-            on_mount=PageState.get_data
         ),
 
         # Una vez cargado, mostrar el listado de vehiculos en Stock.
@@ -81,6 +79,5 @@ def stock() -> rx.Component:
                 padding=Size.BIG.value,
                 flex_wrap="wrap",
             ),
-            # on_mount=PageState.get_data
         ),
     )
