@@ -1,11 +1,13 @@
 import reflex as rx
 
 from Autos_Mercado_Website.components.data_list import data_list
+from Autos_Mercado_Website.components.title import title
 from Autos_Mercado_Website.supabase.PageState import PageState
 from Autos_Mercado_Website.components.dark_mode_toggle import dark_mode_toggle
 from Autos_Mercado_Website.styles.styles import Spacing, Size
 
 
+@rx.page(on_load=PageState.get_car)
 def car_display() -> rx.Component:
     return rx.cond(
         # https://reflex.dev/docs/library/dynamic-rendering/cond/
@@ -31,13 +33,11 @@ def car_display() -> rx.Component:
                         rx.vstack(
                             rx.heading(
                                 f"{PageState.vehiculo_info.precio_venta} €",
-                                weight="bold",
-                                size="9",
+                                weight="bold", size="9",
                             ),
                             rx.heading(
                                 f"Financiado por {PageState.vehiculo_info.precio_financiado} €/mes",
-                                weight="medium",
-                                size="5",
+                                weight="medium", size="5",
                             ),
                             data_list(
                                 v1=PageState.vehiculo_info.anio,
@@ -55,6 +55,32 @@ def car_display() -> rx.Component:
                         width="100%",
                         gap=Size.VERY_BIG.value,
                     ),
+                    rx.hstack(
+                        rx.button(
+                            rx.link(
+                                title("Coches.net", size=[Size.DEFAULT_BIG.value]),
+                                href=PageState.vehiculo_info.coches_punto_net
+                            ),
+                            radius="large",
+                            size="4",
+                            color_scheme="red",
+                            variant="classic"
+                        ) if PageState.vehiculo_info.coches_punto_net is not None else rx.fragment(),
+                        rx.button(
+                            rx.link(
+                                title("Milanuncios", size=[Size.DEFAULT_BIG.value]),
+                                href=PageState.vehiculo_info.milanuncios
+                            ),
+                            radius="large",
+                            size="4",
+                            color_scheme="jade",
+                            variant="classic"
+                        ) if PageState.vehiculo_info.milanuncios is not None else rx.fragment(),
+                        gap=Size.DEFAULT.value,
+                        align="center",
+                        margin="20px"
+                    ),
+
                 ),
 
                 rx.mobile_and_tablet(
@@ -66,15 +92,10 @@ def car_display() -> rx.Component:
                             width="100%"
                         ),
                         rx.vstack(
-                            rx.heading(
-                                f"{PageState.vehiculo_info.precio_venta} €",
-                                weight="bold",
-                                size="9",
-                            ),
+                            rx.heading(f"{PageState.vehiculo_info.precio_venta} €", weight="bold", size="9"),
                             rx.heading(
                                 f"Financiado por {PageState.vehiculo_info.precio_financiado} €/mes",
-                                weight="medium",
-                                size="5",
+                                weight="medium", size="5",
                             ),
                         ),
                         data_list(
@@ -87,6 +108,30 @@ def car_display() -> rx.Component:
                             v7=PageState.vehiculo_info.cilindrada,
                             v8=PageState.vehiculo_info.puertas,
                             v9=PageState.vehiculo_info.color,
+                        ),
+                        rx.vstack(
+                            rx.button(
+                                rx.link(
+                                    title("Coches.net", size=[Size.DEFAULT_BIG.value]),
+                                    href=PageState.vehiculo_info.coches_punto_net
+                                ),
+                                radius="large",
+                                size="4",
+                                color_scheme="red",
+                                variant="classic"
+                            ) if PageState.vehiculo_info.coches_punto_net is not "N/A" else rx.fragment(),
+                            rx.button(
+                                rx.link(
+                                    title("Milanuncios", size=[Size.DEFAULT_BIG.value]),
+                                    href=PageState.vehiculo_info.milanuncios
+                                ),
+                                radius="large",
+                                size="4",
+                                color_scheme="jade",
+                                variant="classic"
+                            ) if PageState.vehiculo_info.milanuncios is not "N/A" else rx.fragment(),
+                            gap=Size.DEFAULT.value,
+                            align="center",
                         ),
                         align="center",
                         width="100%",

@@ -66,20 +66,23 @@ class SupabaseAPI:
                     imagen_public_url=self.imagen_preview(coche["imagen"]),
                     precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
                     precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
-                    coches_punto_net=coche["coches_punto_net"],
-                    milanuncios=coche["milanuncios"],
-                    anio=coche["anio"],
-                    tipo=coche["tipo"],
-                    combustible=coche["combustible"],
-                    transmision=coche["transmision"],
-                    kilometraje=coche["kilometraje"],
-                    caballos=coche["caballos"],
-                    cilindrada=coche["cilindrada"],
-                    puertas=coche["puertas"],
-                    color=coche["color"],
+                    coches_punto_net=self.validar_campo(coche["coches_punto_net"]),
+                    milanuncios=self.validar_campo(coche["milanuncios"]),
+                    anio=self.validar_campo(coche["anio"]),
+                    tipo=self.validar_campo(coche["tipo"]),
+                    combustible=self.validar_campo(coche["combustible"]),
+                    transmision=self.validar_campo(coche["transmision"]),
+                    kilometraje=self.validar_campo(coche["kilometraje"]),
+                    caballos=self.validar_campo(coche["caballos"]),
+                    cilindrada=self.validar_campo(coche["cilindrada"]),
+                    puertas=self.validar_campo(coche["puertas"]),
+                    color=self.validar_campo(coche["color"]),
                 )
 
         return vehiculo
+
+    def validar_campo(self, v, default_value="N/A"):
+        return v if v not in (None, "") else default_value
 
     def imagen_preview(self, path: str) -> str:
         response = self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
