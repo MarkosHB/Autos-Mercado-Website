@@ -13,30 +13,7 @@ def car_display() -> rx.Component:
         DisplayState.car_loading,
 
         # Si aún no se ha cargado, mostrar una plantilla oculta (skeleton).
-        rx.vstack(
-            dark_mode_toggle(),
-            rx.center(
-                rx.hstack(
-                    rx.skeleton(
-                        width="100px",
-                        height="100px",
-                        background_color="blue",
-                        margin="10px"
-                    ),
-                    rx.skeleton(
-                        width="100px",
-                        height="100px",
-                        background_color="red",
-                        margin="10px"
-                    )
-                )
-            ),
-            align="center",
-            margin="12px",
-            width="100%",
-            spacing=Spacing.BIG.value,
-            padding=Size.DEFAULT.value,
-        ),
+        skeleton(),
 
         # Una vez cargado, mostrar los detalles del vehiculo.
         rx.vstack(
@@ -73,10 +50,12 @@ def car_display() -> rx.Component:
                                 v8=DisplayState.vehiculo_info.puertas,
                                 v9=DisplayState.vehiculo_info.color,
                             ),
+                            align="center",
+                            width="100%",
                         ),
                         align="center",
                         width="100%",
-                        gap=Size.VERY_BIG.value,
+                        gap=Size.DEFAULT.value,
                     ),
 
                     rx.box(botones_cochesnet_milanuncios(), margin="20px"),
@@ -142,9 +121,9 @@ def botones_cochesnet_milanuncios() -> rx.Component:
                     href=DisplayState.vehiculo_info.coches_punto_net
                 ),
                 radius="large",
-                size="4",
+                size="2",
                 color_scheme="red",
-                variant="classic"
+                variant="solid"
             ),
         ),
         rx.cond(
@@ -156,12 +135,37 @@ def botones_cochesnet_milanuncios() -> rx.Component:
                     href=DisplayState.vehiculo_info.milanuncios
                 ),
                 radius="large",
-                size="4",
+                size="2",
                 color_scheme="jade",
-                variant="classic"
+                variant="solid"
             )
         ),
         gap=Size.DEFAULT.value,
         align="center",
         wrap="wrap",
+    )
+
+
+def skeleton() -> rx.Component:
+    return rx.vstack(
+        dark_mode_toggle(),
+        rx.skeleton(rx.heading("Estamos cargando los datos de su vehiculo.", size="8"), loading=True),
+
+        rx.container(
+            rx.skeleton(
+                data_list("", "", "", "", "", "", "", "", ""),
+                height="550px",
+                width="100%",
+
+                loading=True
+            ),
+            size="4",
+            width="100%",
+            height="100%"
+        ),
+        align="center",
+        margin="12px",
+        width="100%",
+        spacing=Spacing.BIG.value,
+        padding=Size.DEFAULT.value,
     )

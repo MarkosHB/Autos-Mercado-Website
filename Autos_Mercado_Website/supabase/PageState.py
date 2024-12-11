@@ -20,10 +20,11 @@ class PageState(rx.State):
 
     @rx.event
     async def get_data(self):
-        self.loading = True
+        if not self.vehiculos_info:
+            self.loading = True
 
-        self.vehiculos_info = await coches_info()
-        for coche in self.vehiculos_info:
-            self.preview_images.append(obtener_imagen(coche.imagen_public_url))
+            self.vehiculos_info = await coches_info()
+            for coche in self.vehiculos_info:
+                self.preview_images.append(obtener_imagen(coche.imagen_public_url))
 
-        self.loading = False
+            self.loading = False

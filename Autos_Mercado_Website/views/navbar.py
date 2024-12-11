@@ -142,7 +142,7 @@ def _dialog_formulario() -> rx.Component:
                     size=[Size.DEFAULT_BIG.value],
                 ),
                 color_scheme="blue",
-                variant="classic",
+                variant="solid",
                 radius="large",
                 size="3",
             ),

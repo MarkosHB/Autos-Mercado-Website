@@ -11,7 +11,6 @@ from Autos_Mercado_Website.views.navbar import navbar
 from Autos_Mercado_Website.views.header import header
 from Autos_Mercado_Website.views.footer import footer
 
-from Autos_Mercado_Website.components.data_list import data_list
 
 ROUTE = Route.SOBRENOSOTROS
 
