@@ -18,7 +18,6 @@ class DisplayState(rx.State):
     car_loading: bool = True
     vehiculo_info: Optional[Vehiculo] = None
     modelo: str = ""
-    image: Optional[ImageFile] = None
 
     @rx.event
     async def get_car(self):
@@ -31,6 +30,5 @@ class DisplayState(rx.State):
             self.modelo = categoria[0]
 
             self.vehiculo_info = await coche_info(self.modelo.replace("-", " "))
-            self.image = obtener_imagen(self.vehiculo_info.imagen_public_url)
 
         self.car_loading = False

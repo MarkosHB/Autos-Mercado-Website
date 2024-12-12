@@ -1,3 +1,5 @@
+from io import BytesIO
+
 import reflex as rx
 from autosmercado.supabase.api import coches_info
 from autosmercado.supabase.vehiculo import Vehiculo
@@ -7,10 +9,15 @@ import urllib.request
 from PIL.ImageFile import ImageFile
 
 
-def obtener_imagen(url: str):
+def obtener_imagen(url: str) -> ImageFile:
     peticion = urllib.request.Request(url)
     respuesta = urllib.request.urlopen(peticion)
-    return Image.open(respuesta)
+    img = Image.open(respuesta)
+    img.thumbnail((100, 100))
+    webp_file = BytesIO()
+    img.save(webp_file, format="WEBP", quality=85)
+    webp_file.seek(0)
+    return Image.open(webp_file)
 
 
 class PageState(rx.State):
@@ -24,7 +31,5 @@ class PageState(rx.State):
             self.loading = True
 
             self.vehiculos_info = await coches_info()
-            for coche in self.vehiculos_info:
-                self.preview_images.append(obtener_imagen(coche.imagen_public_url))
 
             self.loading = False

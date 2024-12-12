@@ -7,19 +7,19 @@ from autosmercado.supabase.vehiculo import Vehiculo
 
 def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
     return rx.card(
-        rx.link(
-            rx.inset(
-                rx.image(
-                    src=PageState.preview_images[idx],
-                    width="100%",
-                    height="auto",
-                ),
-                side="top",
-                pb="current",
-                clip="padding-box",
-            ),
-            href=f"/detalles-del-vehiculo/{vehiculo.url_modelo}",
-        ),
+        #rx.link(
+        #    rx.inset(
+        #        rx.image(
+        #            src=PageState.preview_images[idx],
+        #            width="100%",
+        #            height="auto",
+        #        ),
+        #        side="top",
+        #        pb="current",
+        #        clip="padding-box",
+        #    ),
+        #    href=f"/detalles-del-vehiculo/{vehiculo.url_modelo}",
+        #),
         rx.vstack(
             rx.link(
                 rx.heading(
