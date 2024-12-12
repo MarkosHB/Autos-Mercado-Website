@@ -25,7 +25,7 @@ def car_display() -> rx.Component:
 
                     rx.hstack(
                         rx.image(
-                            src=DisplayState.image,
+                            src=DisplayState.vehiculo_info.imagen_public_url,
                             border_radius="20px 20px",
                             border="1px solid gray",
                             width="60%"
@@ -66,7 +66,7 @@ def car_display() -> rx.Component:
 
                     rx.vstack(
                         rx.image(
-                            src=DisplayState.image,
+                            src=DisplayState.vehiculo_info.imagen_public_url,
                             border_radius="20px 20px",
                             border="1px solid gray",
                             width="100%"

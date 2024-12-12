@@ -19,10 +19,9 @@ def stock() -> rx.Component:
                         lambda i: rx.skeleton(
                             rx.card(
                                 rx.inset(
-                                    rx.image(
-                                        src="logo.png",
-                                        width="100%",
-                                        height="auto",
+                                    rx.text(
+                                        "Placeholder",
+                                        height="250px",
                                     ),
                                     side="top",
                                     pb="current",
