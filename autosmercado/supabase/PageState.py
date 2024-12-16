@@ -9,9 +9,6 @@ class PageState(rx.State):
 
     @rx.event
     async def get_data(self):
-        if not self.vehiculos_info:
-            self.loading = True
-
-            self.vehiculos_info = await coches_info()
-
-            self.loading = False
+        self.loading = True
+        self.vehiculos_info = await coches_info()
+        self.loading = False

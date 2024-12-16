@@ -1,7 +1,6 @@
 import reflex as rx
 
 from autosmercado.styles.styles import Spacing
-from autosmercado.supabase.PageState import PageState
 from autosmercado.supabase.vehiculo import Vehiculo
 
 
