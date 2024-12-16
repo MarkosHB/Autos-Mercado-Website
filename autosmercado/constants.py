@@ -4,7 +4,7 @@ MILANUNCIOS = "https://www.milanuncios.com/tiendas-profesionales/autos-mercado-5
 
 # Redes sociales.
 INSTAGRAM = "https://www.instagram.com/autos_mercado/"
-FACEBOOK = "https://www.facebook.com/autosmercadovelez"
+FACEBOOK = "https://www.facebook.com/people/Autos-Mercadocom/61553221770748/"
 
 # Info contacto.
 MOVIL1 = "644 879 555"

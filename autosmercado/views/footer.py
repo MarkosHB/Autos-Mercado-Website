@@ -11,7 +11,7 @@ def footer() -> rx.Component:
         social_link("Phone", TextColor.GREEN, None, const.FIJO),
         social_link("Mail", TextColor.PURPLE, f"mailto:{const.CORREO_ELECTRONICO}", const.CORREO_ELECTRONICO),
         social_link("Instagram", TextColor.PINK, const.INSTAGRAM, "@autos_mercado"),
-        social_link("Facebook", TextColor.BLUE, const.FACEBOOK, "@autosmercadovelez"),
+        social_link("Facebook", TextColor.BLUE, const.FACEBOOK, "Autos-Mercado.com"),
 
         bg=Color.SECONDARY.value,
         spacing=Spacing.BIG.value,
