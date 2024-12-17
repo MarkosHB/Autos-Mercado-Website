@@ -10,3 +10,7 @@ async def coches_info() -> list[Vehiculo]:
 
 async def coche_info(modelo: str) -> Vehiculo:
     return SUPABASE_API.fetch_car(modelo)
+
+
+async def enviar_mensaje_formulario(data: dict) -> None:
+    return SUPABASE_API.send_form_msg(data)

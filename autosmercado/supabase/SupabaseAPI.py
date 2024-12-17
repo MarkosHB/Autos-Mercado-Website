@@ -14,6 +14,8 @@ class SupabaseAPI:
     SUPABASE_TABLE = os.environ.get("SUPABASE_TABLE")
     SUPABASE_BUCKET = os.environ.get("SUPABASE_BUCKET")
 
+    SUPABASE_FORM = os.environ.get("SUPABASE_FORM")
+
     def __init__(self) -> None:
         if self.SUPABASE_URL != None and self.SUPABASE_KEY != None:
             self.supabase: Client = create_client(
@@ -88,8 +90,11 @@ class SupabaseAPI:
         response = self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
         return response[:-1]
 
+    def send_form_msg(self, data: dict):
+        self.supabase.table(self.SUPABASE_FORM).insert(data, default_to_null=True).execute()
+
 
 # Debug on local.
 if __name__ == "__main__":
     api = SupabaseAPI()
-    print(api.fetch_data())
+    print(api.send_form_msg({}))

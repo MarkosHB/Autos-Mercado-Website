@@ -1,12 +1,6 @@
 import reflex as rx
 
-
-class FormInputState(rx.State):
-    form_data: dict = {}
-
-    @rx.event
-    def handle_submit(self, form_data: dict):
-        self.form_data = form_data
+from autosmercado.supabase.PageState import PageState
 
 
 def form_field(
@@ -67,7 +61,7 @@ def form() -> rx.Component:
                             "Consulta adicional no contemplada"
                          ],
                         default_value="Interesad@ en un vehículo de Stock",
-                        name="motivo de consulta",
+                        name="motivo",
                         required=True,
                     ),
                     rx.flex(
@@ -75,13 +69,13 @@ def form() -> rx.Component:
                             "Nombre.",
                             "Su nombre de pila",
                             "text",
-                            "Nombre del interesado",
+                            "nombre",
                         ),
                         form_field(
                             "Apellidos.",
                             "Su apellido completo",
                             "text",
-                            "Apellidos",
+                            "apellidos",
                         ),
                         spacing="3",
                         flex_direction=[
@@ -139,9 +133,7 @@ def form() -> rx.Component:
                     spacing="2",
                     width="100%",
                 ),
-                on_submit=lambda form_data: rx.window_alert(
-                    form_data.to_string()
-                ),
+                on_submit=PageState.handle_submit,
                 reset_on_submit=True,
             ),
             width="100%",
@@ -191,7 +183,7 @@ def mobile_form() -> rx.Component:
                             "Consulta adicional no contemplada"
                          ],
                         default_value="Interesad@ en un vehículo de Stock",
-                        name="motivo de consulta",
+                        name="motivo",
                         required=True,
                     ),
                     rx.flex(
@@ -199,13 +191,13 @@ def mobile_form() -> rx.Component:
                             "Nombre.",
                             "Su nombre de pila",
                             "text",
-                            "Nombre del interesado",
+                            "nombre",
                         ),
                         form_field(
                             "Apellidos.",
                             "Su apellido completo",
                             "text",
-                            "Apellidos",
+                            "apellidos",
                         ),
                         spacing="3",
                         flex_direction=[
@@ -233,7 +225,7 @@ def mobile_form() -> rx.Component:
                     ),
                     rx.flex(
                         rx.text(
-                            "Mensaje.",
+                            "mensaje.",
                             style={
                                 "font-size": "15px",
                                 "font-weight": "500",
@@ -242,7 +234,7 @@ def mobile_form() -> rx.Component:
                         ),
                         rx.text_area(
                             placeholder="Motivo de contacto, datos relevantes...",
-                            name="mensaje",
+                            name="Mensaje",
                             resize="vertical",
                         ),
                         direction="column",
@@ -263,9 +255,7 @@ def mobile_form() -> rx.Component:
                     spacing="2",
                     width="100%",
                 ),
-                on_submit=lambda form_data: rx.window_alert(
-                    form_data.to_string()
-                ),
+                on_submit=PageState.handle_submit,
                 reset_on_submit=True,
             ),
             width="100%",
