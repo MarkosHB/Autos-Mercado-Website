@@ -234,7 +234,7 @@ def mobile_form() -> rx.Component:
                         ),
                         rx.text_area(
                             placeholder="Motivo de contacto, datos relevantes...",
-                            name="Mensaje",
+                            name="mensaje",
                             resize="vertical",
                         ),
                         direction="column",
