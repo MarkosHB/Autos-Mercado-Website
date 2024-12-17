@@ -121,10 +121,6 @@ def form() -> rx.Component:
                     rx.form.submit(
                         rx.dialog.close(  # Por estar en un dialog.
                             rx.button("Enviar información"),
-                            on_click=rx.toast.success(
-                                "¡Formulario enviado correctamente!",
-                                position="bottom-right",
-                            ),
                             width="100%",
                         ),
                         variant="soft",
@@ -225,7 +221,7 @@ def mobile_form() -> rx.Component:
                     ),
                     rx.flex(
                         rx.text(
-                            "mensaje.",
+                            "Mensaje.",
                             style={
                                 "font-size": "15px",
                                 "font-weight": "500",
@@ -244,10 +240,6 @@ def mobile_form() -> rx.Component:
                         rx.button(
                             "Enviar información",
                             width="100%",
-                        ),
-                        on_click=rx.toast.success(
-                            "¡Formulario enviado correctamente!",
-                            position="bottom-right",
                         ),
                         variant="soft",
                     ),

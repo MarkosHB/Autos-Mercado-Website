@@ -12,5 +12,5 @@ async def coche_info(modelo: str) -> Vehiculo:
     return SUPABASE_API.fetch_car(modelo)
 
 
-async def enviar_mensaje_formulario(data: dict) -> None:
+async def enviar_mensaje_formulario(data: dict) -> bool:
     return SUPABASE_API.send_form_msg(data)

@@ -2,6 +2,7 @@ import os
 import dotenv
 from supabase import create_client, Client
 from autosmercado.supabase.vehiculo import Vehiculo
+from autosmercado.utils import MAX_FORM_MSGs
 
 
 class SupabaseAPI:
@@ -90,8 +91,11 @@ class SupabaseAPI:
         response = self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
         return response[:-1]
 
-    def send_form_msg(self, data: dict):
-        self.supabase.table(self.SUPABASE_FORM).insert(data, default_to_null=True).execute()
+    def send_form_msg(self, data: dict) -> bool:
+        response = self.supabase.table(self.SUPABASE_FORM).select("id", count="exact").execute()
+        if response.count <= MAX_FORM_MSGs:
+            self.supabase.table(self.SUPABASE_FORM).insert(data, default_to_null=True).execute()
+        return response.count <= MAX_FORM_MSGs
 
 
 # Debug on local.

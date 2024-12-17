@@ -17,7 +17,18 @@ class PageState(rx.State):
 
         self.form_data = form_data
 
-        await enviar_mensaje_formulario(form_data)
+        status = await enviar_mensaje_formulario(form_data)
+
+        if status:
+            rx.toast.success(
+                "¡Formulario enviado correctamente!",
+                position="bottom-right",
+            ),
+        else:
+            rx.toast.error(
+                "Error. Contacte con nosotros mediante otro método.",
+                position="bottom-right",
+            )
 
     @rx.event
     async def get_data(self):
