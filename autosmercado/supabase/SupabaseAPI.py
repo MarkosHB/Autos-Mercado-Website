@@ -97,4 +97,12 @@ class SupabaseAPI:
 # Debug on local.
 if __name__ == "__main__":
     api = SupabaseAPI()
-    print(api.send_form_msg({}))
+    print(api.send_form_msg({
+        'motivo': 'Consulta sobre disponibilidad',
+        'nombre': 'Juan',
+        'apellidos': 'Pérez García',
+        'email': 'juan.perez@example.com',
+        'telefono': '123456789',
+        'mensaje': 'Hola, estoy interesado en un vehículo. ¿Está disponible?',
+        'fecha_envio': '2024-06-17',
+    }))

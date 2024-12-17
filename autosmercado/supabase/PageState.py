@@ -13,7 +13,7 @@ class PageState(rx.State):
 
     @rx.event
     async def handle_submit(self, form_data: dict):
-        form_data["fecha_envio"] = datetime.now().strftime("%d/%m/%Y")
+        form_data["fecha_envio"] = datetime.now().strftime("%Y-%m-%d")
 
         self.form_data = form_data
 
