@@ -120,7 +120,7 @@ def form() -> rx.Component:
                     ),
                     rx.form.submit(
                         rx.dialog.close(  # Por estar en un dialog.
-                            rx.button("Enviar información"),
+                            rx.button("Enviar información", type="submit"),
                             width="100%",
                         ),
                         variant="soft",
@@ -239,6 +239,7 @@ def mobile_form() -> rx.Component:
                     rx.form.submit(
                         rx.button(
                             "Enviar información",
+                            type="submit",
                             width="100%",
                         ),
                         variant="soft",

@@ -20,13 +20,17 @@ class PageState(rx.State):
         status = await enviar_mensaje_formulario(form_data)
 
         if status:
-            rx.toast.success(
+            yield rx.toast.success(
                 "¡Formulario enviado correctamente!",
+                duration=5000,
+                close_button=True,
                 position="bottom-right",
             )
         else:
-            rx.toast.error(
+            yield rx.toast.error(
                 "Error. Contacte con nosotros mediante otro método.",
+                duration=5000,
+                close_button=True,
                 position="bottom-right",
             )
 
