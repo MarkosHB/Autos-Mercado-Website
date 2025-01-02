@@ -15,7 +15,7 @@ def footer() -> rx.Component:
 
         bg=Color.SECONDARY.value,
         spacing=Spacing.BIG.value,
-        margin_top="40px",
+        margin_top="30px",
         border_top=f"1px solid {Color.SECONDARY.value}",
         padding=Size.BIG.value,
         width="100%",
