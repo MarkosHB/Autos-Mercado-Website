@@ -140,16 +140,18 @@ def botones_cochesnet_milanuncios() -> rx.Component:
                 variant="solid"
             )
         ),
-        rx.hover_card.root(
-            rx.hover_card.trigger(
-                rx.icon("qr-code", size=26, on_click=DisplayState.descargar_qr),
-            ),
-            rx.hover_card.content(
-                rx.text("Descargue el código QR de este vehículo."),
-                side="right",
-                side_offset=15,
-                align="center",
-            ),
+        rx.tablet_and_desktop(
+            rx.hover_card.root(
+                rx.hover_card.trigger(
+                    rx.icon("qr-code", size=26, on_click=DisplayState.descargar_qr),
+                ),
+                rx.hover_card.content(
+                    rx.text("Descargue el código QR de este vehículo."),
+                    side="right",
+                    side_offset=15,
+                    align="center",
+                ),
+            )
         ),
         gap=Size.DEFAULT.value,
         align="center",
