@@ -1,16 +1,15 @@
 import reflex as rx
 
+import autosmercado.texts as texto
 import autosmercado.utils as utils
 from autosmercado.routes import Route
 
 from autosmercado.styles.styles import Spacing
+from autosmercado.components.accordion import accordion
 
 from autosmercado.views.navbar import navbar
 from autosmercado.views.header import header
-from autosmercado.views.pasos_a_la_carta import pasos_a_la_carta
 from autosmercado.views.footer import footer
-
-import autosmercado.texts as texto
 
 ROUTE = Route.COCHESALACARTA
 
@@ -31,13 +30,16 @@ def cochesalacarta() -> rx.Component:
                     text1=texto.COCHES_A_LA_CARTA_TEXTO1,
                     text2=texto.COCHES_A_LA_CARTA_TEXTO2,
                 ),
-                pasos_a_la_carta(
-                    header1=texto.DESPLEGABLE_HEADER1,
-                    header2=texto.DESPLEGABLE_HEADER2,
-                    header3=texto.DESPLEGABLE_HEADER3,
-                    texto1=texto.DESPLEGABLE_TEXTO1,
-                    texto2=texto.DESPLEGABLE_TEXTO2,
-                    texto3=texto.DESPLEGABLE_TEXTO3,
+                rx.container(
+                    accordion(
+                        texto.DESPLEGABLE_HEADER1,
+                        texto.DESPLEGABLE_HEADER2,
+                        texto.DESPLEGABLE_HEADER3,
+                        texto.DESPLEGABLE_TEXTO1,
+                        texto.DESPLEGABLE_TEXTO2,
+                        texto.DESPLEGABLE_TEXTO3,
+                    ),
+                    width="100%",
                 ),
                 footer(),
                 spacing=Spacing.DEFAULT.value,

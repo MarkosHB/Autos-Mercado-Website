@@ -20,7 +20,7 @@ def stock() -> rx.Component:
                             rx.card(
                                 rx.inset(
                                     rx.text(
-                                        "Placeholder",
+                                        "Cargando...",
                                         height="250px",
                                     ),
                                     side="top",
@@ -28,7 +28,7 @@ def stock() -> rx.Component:
                                     clip="padding-box",
                                 ),
                                 rx.heading(
-                                    "Esto es un texto de prueba lo suficientemente largo ..."
+                                    "Estamos obteniendo la información del vehículo"
                                 ),
                                 width="100%",
                                 spacing=Spacing.DEFAULT.value,
@@ -60,7 +60,7 @@ def stock() -> rx.Component:
                 rx.grid(
                     rx.foreach(
                         PageState.vehiculos_info,
-                        lambda coche, index: car_preview(coche, index),
+                        lambda coche: car_preview(coche),
                     ),
                     gap="2rem",
                     grid_template_columns=[

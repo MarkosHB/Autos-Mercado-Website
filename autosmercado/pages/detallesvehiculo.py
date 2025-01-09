@@ -4,8 +4,8 @@ from autosmercado.routes import Route
 import autosmercado.utils as utils
 from autosmercado.styles.styles import Spacing
 from autosmercado.supabase.DisplayState import DisplayState
-from autosmercado.views.car_display import car_display
 
+from autosmercado.views.car_display import car_display
 from autosmercado.views.navbar import navbar
 from autosmercado.views.footer import footer
 

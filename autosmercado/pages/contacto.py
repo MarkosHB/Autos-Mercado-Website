@@ -5,8 +5,8 @@ import autosmercado.utils as utils
 
 from autosmercado.styles.styles import Spacing
 from autosmercado.components.form import mobile_form
-from autosmercado.views.header import header
 
+from autosmercado.views.header import header
 from autosmercado.views.navbar import navbar
 from autosmercado.views.footer import footer
 

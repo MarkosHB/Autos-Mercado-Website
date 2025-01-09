@@ -12,6 +12,12 @@ class PageState(rx.State):
     form_data: dict = {}
 
     @rx.event
+    async def get_data(self):
+        self.loading = True
+        self.vehiculos_info = await coches_info()
+        self.loading = False
+
+    @rx.event
     async def handle_submit(self, form_data: dict):
         form_data["fecha_envio"] = datetime.now().isoformat()
 
@@ -33,9 +39,3 @@ class PageState(rx.State):
                 close_button=True,
                 position="bottom-right",
             )
-
-    @rx.event
-    async def get_data(self):
-        self.loading = True
-        self.vehiculos_info = await coches_info()
-        self.loading = False

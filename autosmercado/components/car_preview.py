@@ -4,7 +4,7 @@ from autosmercado.styles.styles import Spacing
 from autosmercado.supabase.vehiculo import Vehiculo
 
 
-def car_preview(vehiculo: Vehiculo, idx: int) -> rx.Component:
+def car_preview(vehiculo: Vehiculo) -> rx.Component:
     return rx.card(
         rx.link(
             rx.inset(

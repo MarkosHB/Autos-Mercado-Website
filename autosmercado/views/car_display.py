@@ -58,7 +58,7 @@ def car_display() -> rx.Component:
                         gap=Size.DEFAULT.value,
                     ),
 
-                    rx.box(botones_cochesnet_milanuncios(), margin="20px"),
+                    rx.box(pie_de_foto(), margin="20px"),
 
                 ),
 
@@ -92,7 +92,7 @@ def car_display() -> rx.Component:
                             v9=DisplayState.vehiculo_info.color,
                         ),
 
-                        botones_cochesnet_milanuncios(),
+                        pie_de_foto(),
 
                         align="center",
                         width="100%",
@@ -110,7 +110,7 @@ def car_display() -> rx.Component:
     )
 
 
-def botones_cochesnet_milanuncios() -> rx.Component:
+def pie_de_foto() -> rx.Component:
     return rx.flex(
         rx.cond(
             DisplayState.vehiculo_info.coches_punto_net == "N/A",

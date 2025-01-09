@@ -88,8 +88,7 @@ class SupabaseAPI:
         return v if v not in (None, "") else default_value
 
     def imagen_preview(self, path: str) -> str:
-        response = self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
-        return response[:-1]
+        return self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
 
     def send_form_msg(self, data: dict) -> bool:
         response = self.supabase.table(self.SUPABASE_FORM).select("id", count="exact").execute()
