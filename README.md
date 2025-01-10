@@ -1,6 +1,11 @@
-# Autos Mercado, su concesionario particular de confianza.
+# Autos Mercado, su concesionario particular de confianza. 
+<img src=https://github.com/MarkosHB/Autos-Mercado-Website/blob/main/assets/fachada.jpg>
 
-Bienvenido al repositorio que aloja la página web del concesionario Autos Mercado, localizado en Vélez-Málaga y con un amplio recorrido en el sector. Aquí encontrará los recursos elaborados para el despliegue en producción de la web-catálogo con sus vehículos y servicios disponibles.
+Bienvenido al repositorio que aloja la página web del concesionario Autos Mercado, localizado en Vélez-Málaga y con una amplia experiencia en el sector. 
+Aquí encontrará los recursos elaborados para el despliegue en producción de la web-catálogo, donde podrá encontrar sus vehículos y servicios disponibles.
+
+
+
 
 ## Desglose de las tecnologías empleadas.
 - ### Frontend:
@@ -15,3 +20,7 @@ Bienvenido al repositorio que aloja la página web del concesionario Autos Merca
   **[Vercel](https://vercel.com/)**, donde se alojan los recursos estáticos elaborados generados por reflex disponibles en `public/`.
   
   **[Railway](https://railway.com/)**, para desplegar el contenedor Docker con la lógica de la página definida mediante funciones Python. 
+
+<p align=center>
+ <img src=https://github.com/MarkosHB/Autos-Mercado-Website/blob/main/assets/logo.png>
+</p>
