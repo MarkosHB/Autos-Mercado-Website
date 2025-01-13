@@ -10,7 +10,7 @@ config = rx.Config(
     api_url=RAILWAY_API_URL,
     cors_allowed_origins=[
          "http://localhost:3000",
-         "https://autos-mercado-website.vercel.app"
+         "https://autos-mercado.vercel.app"
     ],
     theme=rx.theme(appearance="dark"),
 )
