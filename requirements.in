@@ -1,0 +1,7 @@
+# pip install pip-tools
+python-dotenv
+pillow
+qrcode
+requests
+reflex
+supabase
