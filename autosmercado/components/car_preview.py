@@ -30,17 +30,16 @@ def car_preview(vehiculo: Vehiculo) -> rx.Component:
             rx.spacer(),
             rx.text(
                 f"{vehiculo.precio_venta} €",
+                align="left",
                 weight="bold",
-                align="right",
-                size="5",
+                size="6",
             ),
             rx.text(
                 f"Financiado por {vehiculo.precio_financiado} €/mes",
                 align="center",
                 weight="medium",
-                size="3",
+                size="4",
             ),
-
         ),
         width="100%",
         spacing=Spacing.DEFAULT.value,

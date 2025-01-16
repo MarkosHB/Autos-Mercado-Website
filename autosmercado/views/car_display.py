@@ -21,7 +21,7 @@ def car_display() -> rx.Component:
             rx.blockquote(DisplayState.vehiculo_info.modelo, weight="bold", size="8", color_scheme="blue"),
             rx.container(
 
-                rx.desktop_only(
+                rx.tablet_and_desktop(
 
                     rx.hstack(
                         rx.image(
@@ -62,7 +62,7 @@ def car_display() -> rx.Component:
 
                 ),
 
-                rx.mobile_and_tablet(
+                rx.mobile_only(
 
                     rx.vstack(
                         rx.image(
@@ -140,7 +140,7 @@ def pie_de_foto() -> rx.Component:
                 variant="solid"
             )
         ),
-        rx.tablet_and_desktop(
+        rx.desktop_only(
             rx.hover_card.root(
                 rx.hover_card.trigger(
                     rx.icon("qr-code", size=26, on_click=DisplayState.descargar_qr),
