@@ -51,7 +51,7 @@ class SupabaseAPI:
     def fetch_car(self, modelo: str):
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
-            .select("nombre, imagen, precio_venta, precio_financiado, coches_punto_net, milanuncios, anio, tipo, "
+            .select("id", "nombre, imagen, precio_venta, precio_financiado, coches_punto_net, milanuncios, anio, tipo, "
                     "combustible, transmision, kilometraje, caballos, cilindrada, puertas, color")
             .filter('nombre', 'eq', modelo)
             .filter('check_anunciado', 'eq', True)
@@ -67,6 +67,7 @@ class SupabaseAPI:
                     modelo=coche["nombre"],
                     url_modelo=str(coche["nombre"]).replace(" ", "-"),
                     imagen_public_url=self.imagen_preview(coche["imagen"]),
+                    fotos=self.obtener_fotos(coche["id"]),
                     precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
                     precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
                     coches_punto_net=self.validar_campo(coche["coches_punto_net"]),
@@ -89,6 +90,15 @@ class SupabaseAPI:
 
     def imagen_preview(self, path: str) -> str:
         return self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
+    
+    def obtener_fotos(self, iden: str) -> list:
+        response = (self.supabase.storage.from_(self.SUPABASE_BUCKET).list(path=f"Stock/{iden}"))
+
+        fotos = []
+        for item in response:
+            fotos.insert(0, self.imagen_preview(f"Stock/{iden}/{item['name']}"))
+
+        return fotos
 
     def send_form_msg(self, data: dict) -> bool:
         response = self.supabase.table(self.SUPABASE_FORM).select("id", count="exact").execute()
@@ -100,12 +110,3 @@ class SupabaseAPI:
 # Debug on local.
 if __name__ == "__main__":
     api = SupabaseAPI()
-    print(api.send_form_msg({
-        'motivo': 'Consulta sobre disponibilidad',
-        'nombre': 'Juan',
-        'apellidos': 'Pérez García',
-        'email': 'juan.perez@example.com',
-        'telefono': '123456789',
-        'mensaje': 'Hola, estoy interesado en un vehículo. ¿Está disponible?',
-        'fecha_envio': '2024-06-17',
-    }))

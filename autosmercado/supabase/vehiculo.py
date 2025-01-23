@@ -7,6 +7,7 @@ class Vehiculo(rx.Base):
     modelo: str
     url_modelo: str
     imagen_public_url: str
+    fotos: Optional[list]
 
     # Datos para la venta.
     precio_venta: str

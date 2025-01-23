@@ -10,6 +10,8 @@ from io import BytesIO
 class DisplayState(rx.State):
     car_loading: bool = True
     vehiculo_info: Optional[Vehiculo] = None
+    current_image_idx: int = 0
+    hay_fotos: bool = False
 
     @rx.event
     async def get_car(self):
@@ -21,7 +23,23 @@ class DisplayState(rx.State):
         self.vehiculo_info = await coche_info(categoria[0].replace("-", " "))
 
         if self.vehiculo_info is not None:
+            self.hay_fotos = len(self.vehiculo_info.fotos) > 0
             self.car_loading = False
+        else:
+            yield rx.toast.error(
+                "Error: No se ha encontrado ningún vehículo en esta dirección. Compruebe si es correcta.",
+                duration=5000,
+                close_button=True,
+                position="bottom-right",
+            )
+        
+    @rx.event
+    def previous_image(self): 
+        self.current_image_idx = (self.current_image_idx - 1) % len(self.vehiculo_info.fotos)
+    
+    @rx.event
+    def next_image(self): 
+        self.current_image_idx = (self.current_image_idx + 1) % len(self.vehiculo_info.fotos)
 
     @rx.event
     def descargar_qr(self):

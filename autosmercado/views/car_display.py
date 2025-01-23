@@ -59,7 +59,38 @@ def car_display() -> rx.Component:
                     ),
 
                     rx.box(pie_de_foto(), margin="20px"),
-
+                    
+                    rx.cond(
+                        DisplayState.hay_fotos,
+                        rx.vstack(
+                            rx.heading(
+                                "Fotografías adicionales del vehículo",
+                                weight="bold",
+                                size="7",
+                                color_scheme="blue",
+                            ),
+                            rx.hstack(
+                                rx.icon("arrow-big-left", size=56, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
+                                rx.image(
+                                    src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
+                                    border_radius="20px 20px",
+                                    border="1px solid gray",
+                                    width="70%"
+                                ),
+                                rx.icon("arrow-big-right", size=56, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
+                                width="100%",
+                                spacing=Spacing.BIG.value,
+                                padding=Size.DEFAULT.value,
+                                align_items="center",
+                                justify_content="center",
+                            ),
+                            align="center",
+                            margin_top="100px",
+                            width="100%",
+                            spacing=Spacing.SMALL.value,
+                            padding=Size.DEFAULT.value,
+                        )
+                    )
                 ),
 
                 rx.mobile_only(
@@ -94,6 +125,37 @@ def car_display() -> rx.Component:
 
                         pie_de_foto(),
 
+                        rx.cond(
+                            DisplayState.hay_fotos,
+                            rx.vstack(
+                                rx.heading(
+                                    "Fotografías adicionales",
+                                    weight="bold",
+                                    size="6",
+                                    color_scheme="blue",
+                                ),
+                                rx.image(
+                                    src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
+                                    border_radius="20px 20px",
+                                    border="1px solid gray",
+                                    width="100%"
+                                ),
+                                rx.hstack(
+                                    rx.icon("arrow-big-left", size=36, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
+                                    rx.icon("arrow-big-right", size=36, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
+                                    width="100%",
+                                    spacing=Spacing.DEFAULT.value,
+                                    padding=Size.DEFAULT.value,
+                                    align_items="center",
+                                    justify_content="center",
+                                ),
+                                width="100%",
+                                spacing=Spacing.SMALL.value,
+                                padding=Size.DEFAULT.value,
+                                align_items="center",
+                                justify_content="center",
+                            ) 
+                        ),
                         align="center",
                         width="100%",
                         gap=Size.VERY_BIG.value,
