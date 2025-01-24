@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000/</loc><lastmod>2025-01-23T19:45:11.952Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/coches-a-la-carta/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/cochesalacarta/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/contacto/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/detallesvehiculo/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/sobre-nosotros/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/sobrenosotros/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/vendemos-su-vehiculo/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/vendemossuvehiculo/</loc><lastmod>2025-01-23T19:45:11.953Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/</loc><lastmod>2025-01-24T14:00:25.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/coches-a-la-carta/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/cochesalacarta/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/contacto/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/detallesvehiculo/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/pantalla-presentacion/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/pantallapresentacion/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/sobre-nosotros/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/sobrenosotros/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/vendemos-su-vehiculo/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/vendemossuvehiculo/</loc><lastmod>2025-01-24T14:00:25.985Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

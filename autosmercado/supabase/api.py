@@ -14,3 +14,7 @@ async def coche_info(modelo: str) -> Vehiculo:
 
 async def enviar_mensaje_formulario(data: dict) -> bool:
     return SUPABASE_API.send_form_msg(data)
+
+
+async def obtener_fotos_presentacion() -> list[str]:
+    return SUPABASE_API.fetch_presentation_photos()

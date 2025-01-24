@@ -8,13 +8,10 @@ from autosmercado.utils import MAX_FORM_MSGs
 class SupabaseAPI:
 
     dotenv.load_dotenv()
-
     SUPABASE_URL = os.environ.get("SUPABASE_URL")
     SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
-
     SUPABASE_TABLE = os.environ.get("SUPABASE_TABLE")
     SUPABASE_BUCKET = os.environ.get("SUPABASE_BUCKET")
-
     SUPABASE_FORM = os.environ.get("SUPABASE_FORM")
 
     def __init__(self) -> None:
@@ -51,7 +48,7 @@ class SupabaseAPI:
     def fetch_car(self, modelo: str):
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
-            .select("id", "nombre, imagen, precio_venta, precio_financiado, coches_punto_net, milanuncios, anio, tipo, "
+            .select("id, nombre, imagen, precio_venta, precio_financiado, coches_punto_net, milanuncios, anio, tipo, "
                     "combustible, transmision, kilometraje, caballos, cilindrada, puertas, color")
             .filter('nombre', 'eq', modelo)
             .filter('check_anunciado', 'eq', True)
@@ -84,6 +81,24 @@ class SupabaseAPI:
                 )
 
         return vehiculo
+    
+    def fetch_presentation_photos(self) -> list[str]:
+        response = (
+            self.supabase.table(self.SUPABASE_TABLE)
+            .select("imagen")
+            .filter('check_anunciado', 'eq', True)
+            .filter('check_vendido', 'eq', False)
+            .execute()
+        )
+
+        fotos = []
+
+        if len(response.data) > 0:
+            for coche in response.data:
+                fotos.append(self.imagen_preview(coche["imagen"]))
+
+        return fotos
+
 
     def validar_campo(self, v, default_value="N/A"):
         return v if v not in (None, "") else default_value

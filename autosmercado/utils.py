@@ -19,6 +19,8 @@ title_contacto = "Contacto | Autos-Mercado"
 
 title_detallesvehiculo = "Detalles del vehículo | Autos-Mercado"
 
+title_pantallapresentacion = "Presentación | Autos-Mercado"
+
 MAX_FORM_MSGs = 10  # limite de mensajes recibidos en el formulario
 
 

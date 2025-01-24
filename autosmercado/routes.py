@@ -8,3 +8,4 @@ class Route(Enum):
     SOBRENOSOTROS = "/sobre-nosotros"
     CONTACTO = "/contacto"
     DETALLESVEHICULO = "/detalles-del-vehiculo/[...category]"
+    PANTALLAPRESENTACION = "/pantalla-presentacion"
