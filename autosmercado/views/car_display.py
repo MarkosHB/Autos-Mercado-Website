@@ -20,9 +20,7 @@ def car_display() -> rx.Component:
             dark_mode_toggle(),
             rx.blockquote(DisplayState.vehiculo_info.modelo, weight="bold", size="8", color_scheme="blue"),
             rx.container(
-
                 rx.tablet_and_desktop(
-
                     rx.hstack(
                         rx.image(
                             src=DisplayState.vehiculo_info.imagen_public_url,
@@ -30,7 +28,6 @@ def car_display() -> rx.Component:
                             border="1px solid gray",
                             width="60%"
                         ),
-
                         rx.vstack(
                             rx.heading(
                                 f"{DisplayState.vehiculo_info.precio_venta} €", weight="bold", size="9",
@@ -57,25 +54,17 @@ def car_display() -> rx.Component:
                         width="100%",
                         gap=Size.DEFAULT.value,
                     ),
-
                     rx.box(pie_de_foto(), margin="20px"),
-                    
                     rx.cond(
                         DisplayState.hay_fotos,
                         rx.vstack(
-                            rx.heading(
-                                "Fotografías adicionales del vehículo",
-                                weight="bold",
-                                size="7",
-                                color_scheme="blue",
-                            ),
                             rx.hstack(
                                 rx.icon("arrow-big-left", size=56, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
                                 rx.image(
                                     src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
                                     border_radius="20px 20px",
                                     border="1px solid gray",
-                                    width="70%"
+                                    width="60%"
                                 ),
                                 rx.icon("arrow-big-right", size=56, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
                                 width="100%",
@@ -85,7 +74,6 @@ def car_display() -> rx.Component:
                                 justify_content="center",
                             ),
                             align="center",
-                            margin_top="100px",
                             width="100%",
                             spacing=Spacing.SMALL.value,
                             padding=Size.DEFAULT.value,
@@ -94,7 +82,6 @@ def car_display() -> rx.Component:
                 ),
 
                 rx.mobile_only(
-
                     rx.vstack(
                         rx.image(
                             src=DisplayState.vehiculo_info.imagen_public_url,
@@ -102,7 +89,6 @@ def car_display() -> rx.Component:
                             border="1px solid gray",
                             width="100%"
                         ),
-
                         rx.vstack(
                             rx.heading(f"{DisplayState.vehiculo_info.precio_venta} €", weight="bold", size="9"),
                             rx.heading(
@@ -110,7 +96,6 @@ def car_display() -> rx.Component:
                                 weight="medium", size="5",
                             ),
                         ),
-
                         data_list(
                             v1=DisplayState.vehiculo_info.anio,
                             v2=DisplayState.vehiculo_info.tipo,
@@ -122,18 +107,10 @@ def car_display() -> rx.Component:
                             v8=DisplayState.vehiculo_info.puertas,
                             v9=DisplayState.vehiculo_info.color,
                         ),
-
                         pie_de_foto(),
-
                         rx.cond(
                             DisplayState.hay_fotos,
                             rx.vstack(
-                                rx.heading(
-                                    "Fotografías adicionales",
-                                    weight="bold",
-                                    size="6",
-                                    color_scheme="blue",
-                                ),
                                 rx.image(
                                     src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
                                     border_radius="20px 20px",
@@ -152,13 +129,16 @@ def car_display() -> rx.Component:
                                 width="100%",
                                 spacing=Spacing.SMALL.value,
                                 padding=Size.DEFAULT.value,
+                                margin="0px 0px 0px 0px",
                                 align_items="center",
                                 justify_content="center",
                             ) 
                         ),
                         align="center",
                         width="100%",
-                        gap=Size.VERY_BIG.value,
+                        align_items="center",
+                        justify_content="center",
+                        gap=Size.BIG.value,
                     ),
                 ),
                 size="4",
@@ -182,10 +162,7 @@ def pie_de_foto() -> rx.Component:
                     title("Coches.net", size=[Size.DEFAULT_BIG.value]),
                     href=DisplayState.vehiculo_info.coches_punto_net
                 ),
-                radius="large",
-                size="2",
-                color_scheme="red",
-                variant="solid"
+                radius="large", size="2", color_scheme="red", variant="solid"
             ),
         ),
         rx.cond(
@@ -196,10 +173,7 @@ def pie_de_foto() -> rx.Component:
                     title("Milanuncios", size=[Size.DEFAULT_BIG.value]),
                     href=DisplayState.vehiculo_info.milanuncios
                 ),
-                radius="large",
-                size="2",
-                color_scheme="jade",
-                variant="solid"
+                radius="large", size="2", color_scheme="jade", variant="solid"
             )
         ),
         rx.desktop_only(
@@ -209,15 +183,13 @@ def pie_de_foto() -> rx.Component:
                 ),
                 rx.hover_card.content(
                     rx.text("Descargue el código QR de este vehículo."),
-                    side="right",
-                    side_offset=15,
-                    align="center",
+                    side="right", side_offset=15, align="center",
                 ),
             )
         ),
+        rx.separator(margin="50px 0px 30px 0px"),
         gap=Size.DEFAULT.value,
-        align="center",
-        wrap="wrap",
+        align="center", wrap="wrap",
     )
 
 
@@ -225,14 +197,10 @@ def skeleton() -> rx.Component:
     return rx.vstack(
         dark_mode_toggle(),
         rx.skeleton(rx.heading("Estamos cargando los datos de su vehiculo.", size="8"), loading=True),
-
         rx.container(
             rx.skeleton(
                 data_list("", "", "", "", "", "", "", "", ""),
-                height="550px",
-                width="100%",
-
-                loading=True
+                height="550px", width="100%", loading=True
             ),
             size="4",
             width="100%",
