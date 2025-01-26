@@ -14,9 +14,9 @@ def welcome() -> rx.Component:
         ),
         rx.tablet_and_desktop(
             rx.flex(
-                social_link("Smartphone", TextColor.GREEN, None, const.MOVIL1),
-                social_link("Smartphone", TextColor.GREEN, None, const.MOVIL2),
-                social_link("Phone", TextColor.GREEN, None, const.FIJO),
+                social_link("Smartphone", TextColor.GREEN, f"tel:+{const.MOVIL1}", const.MOVIL1),
+                social_link("Smartphone", TextColor.GREEN, f"tel:+{const.MOVIL2}", const.MOVIL2),
+                social_link("Phone", TextColor.GREEN, f"tel:+{const.FIJO}", const.FIJO),
                 social_link("Mail", TextColor.PURPLE, f"mailto:{const.CORREO_ELECTRONICO}", const.CORREO_ELECTRONICO),
 
                 spacing=Spacing.BIG.value,

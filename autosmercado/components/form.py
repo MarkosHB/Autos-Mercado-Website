@@ -4,8 +4,7 @@ from autosmercado.supabase.PageState import PageState
 
 
 def form_field(
-    label: str, placeholder: str, type: str, name: str
-) -> rx.Component:
+    label: str, placeholder: str, type: str, name: str) -> rx.Component:
     return rx.form.field(
         rx.flex(
             rx.form.label(label),
