@@ -95,7 +95,7 @@ class SupabaseAPI:
 
         if len(response.data) > 0:
             for coche in response.data:
-                fotos.append(self.obtener_fotos(coche["id"], self.imagen_preview(coche["imagen"])))
+                fotos.extend(self.obtener_fotos(coche["id"], self.imagen_preview(coche["imagen"])))
 
         return fotos
 
@@ -111,7 +111,7 @@ class SupabaseAPI:
 
         fotos = [foto_principal]
         for item in response:
-            fotos.insert(0, self.imagen_preview(f"Stock/{iden}/{item['name']}"))
+            fotos.insert(1, self.imagen_preview(f"Stock/{iden}/{item['name']}"))
 
         return fotos
 
