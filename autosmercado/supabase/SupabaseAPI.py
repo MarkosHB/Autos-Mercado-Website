@@ -64,7 +64,7 @@ class SupabaseAPI:
                     modelo=coche["nombre"],
                     url_modelo=str(coche["nombre"]).replace(" ", "-"),
                     imagen_public_url=self.imagen_preview(coche["imagen"]),
-                    fotos=self.obtener_fotos(coche["id"]),
+                    fotos=self.obtener_fotos(coche["id"], self.imagen_preview(coche["imagen"])),
                     precio_venta=f"{int(coche['precio_venta']):,.0f}".replace(",", "."),
                     precio_financiado=f"{int(coche['precio_financiado']):,.0f}".replace(",", "."),
                     coches_punto_net=self.validar_campo(coche["coches_punto_net"]),
@@ -106,10 +106,10 @@ class SupabaseAPI:
     def imagen_preview(self, path: str) -> str:
         return self.supabase.storage.from_(self.SUPABASE_BUCKET).get_public_url(path)
     
-    def obtener_fotos(self, iden: str) -> list:
+    def obtener_fotos(self, iden: str, foto_principal: str) -> list:
         response = (self.supabase.storage.from_(self.SUPABASE_BUCKET).list(path=f"Stock/{iden}"))
 
-        fotos = []
+        fotos = [foto_principal]
         for item in response:
             fotos.insert(0, self.imagen_preview(f"Stock/{iden}/{item['name']}"))
 

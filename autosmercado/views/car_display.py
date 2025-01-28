@@ -21,7 +21,6 @@ def car_display() -> rx.Component:
             rx.blockquote(DisplayState.vehiculo_info.modelo, weight="bold", size="8", color_scheme="blue"),
             detalles_vehiculo(),
             align="center",
-            margin="12px",
             width="100%",
             spacing=Spacing.BIG.value,
             padding=Size.DEFAULT.value,
@@ -30,23 +29,33 @@ def car_display() -> rx.Component:
 
 def detalles_vehiculo() -> rx.Component:
     return rx.container(
-        rx.tablet_and_desktop(
+        rx.desktop_only(
             rx.hstack(
-                rx.image(
-                    src=DisplayState.vehiculo_info.imagen_public_url,
-                    border_radius="20px 20px",
-                    border="1px solid gray",
-                    object_fit="contain",
-                    width="60%"
+                rx.vstack(
+                    rx.hstack(
+                        rx.icon("arrow-big-left", size=56, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
+                        rx.image(
+                            src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
+                            border_radius="20px 20px",
+                            border="1px solid gray",
+                            width="80%"
+                        ),
+                        rx.icon("arrow-big-right", size=56, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
+                        width="100%",
+                        spacing=Spacing.DEFAULT.value,
+                        padding=Size.DEFAULT.value,
+                        align_items="center",
+                        justify_content="center",
+                    ),
+                    pie_de_foto(),
+                    align="center",
+                    width="70%",
+                    spacing=Spacing.SMALL.value,
+                    padding=Size.DEFAULT.value,
                 ),
                 rx.vstack(
-                    rx.heading(
-                        f"{DisplayState.vehiculo_info.precio_venta} €", weight="bold", size="9",
-                    ),
-                    rx.heading(
-                        f"Financiado por {DisplayState.vehiculo_info.precio_financiado} €/mes",
-                        weight="medium", size="5",
-                    ),
+                    rx.heading(f"{DisplayState.vehiculo_info.precio_venta} €", weight="bold", size="9"),
+                    rx.heading(f"Financiado por {DisplayState.vehiculo_info.precio_financiado} €/mes", weight="medium", size="5"),
                     data_list(
                         v1=DisplayState.vehiculo_info.anio,
                         v2=DisplayState.vehiculo_info.tipo,
@@ -59,53 +68,41 @@ def detalles_vehiculo() -> rx.Component:
                         v9=DisplayState.vehiculo_info.color,
                     ),
                     align="center",
-                    width="100%",
+                    width="30%",
+                    gap=Size.DEFAULT.value,
+                    padding=Size.DEFAULT.value,
                 ),
                 align="center",
                 width="100%",
                 gap=Size.DEFAULT.value,
-            ),
-            rx.box(pie_de_foto(), margin="20px"),
-            rx.cond(
-                DisplayState.hay_fotos,
+            ),    
+        ),
+
+        rx.mobile_and_tablet(
+            rx.vstack(
                 rx.vstack(
+                    rx.image(
+                        src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
+                        border_radius="20px 20px", border="1px solid gray", width="90%"
+                    ),
                     rx.hstack(
-                        rx.icon("arrow-big-left", size=56, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
-                        rx.image(
-                            src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
-                            border_radius="20px 20px",
-                            border="1px solid gray",
-                            width="60%"
-                        ),
-                        rx.icon("arrow-big-right", size=56, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
+                        rx.icon("arrow-big-left", size=36, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
+                        rx.icon("arrow-big-right", size=36, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
                         width="100%",
-                        spacing=Spacing.BIG.value,
-                        padding=Size.DEFAULT.value,
+                        spacing=Spacing.SMALL.value,
+                        padding=Size.SMALL.value,
                         align_items="center",
                         justify_content="center",
                     ),
-                    align="center",
                     width="100%",
-                    spacing=Spacing.SMALL.value,
+                    spacing=Spacing.DEFAULT.value,
                     padding=Size.DEFAULT.value,
-                )
-            )
-        ),
-
-        rx.mobile_only(
-            rx.vstack(
-                rx.image(
-                    src=DisplayState.vehiculo_info.imagen_public_url,
-                    border_radius="20px 20px",
-                    border="1px solid gray",
-                    width="100%"
+                    align_items="center",
+                    justify_content="center",
                 ),
                 rx.vstack(
                     rx.heading(f"{DisplayState.vehiculo_info.precio_venta} €", weight="bold", size="9"),
-                    rx.heading(
-                        f"Financiado por {DisplayState.vehiculo_info.precio_financiado} €/mes",
-                        weight="medium", size="5",
-                    ),
+                    rx.heading(f"Financiado por {DisplayState.vehiculo_info.precio_financiado} €/mes", weight="medium", size="5"),
                 ),
                 data_list(
                     v1=DisplayState.vehiculo_info.anio,
@@ -119,32 +116,6 @@ def detalles_vehiculo() -> rx.Component:
                     v9=DisplayState.vehiculo_info.color,
                 ),
                 pie_de_foto(),
-                rx.cond(
-                    DisplayState.hay_fotos,
-                    rx.vstack(
-                        rx.image(
-                            src=DisplayState.vehiculo_info.fotos[DisplayState.current_image_idx],
-                            border_radius="20px 20px",
-                            border="1px solid gray",
-                            width="100%"
-                        ),
-                        rx.hstack(
-                            rx.icon("arrow-big-left", size=36, on_click=DisplayState.previous_image, stroke_width=1, color_scheme="gray"),
-                            rx.icon("arrow-big-right", size=36, on_click=DisplayState.next_image, stroke_width=1, color_scheme="gray"),
-                            width="100%",
-                            spacing=Spacing.DEFAULT.value,
-                            padding=Size.DEFAULT.value,
-                            align_items="center",
-                            justify_content="center",
-                        ),
-                        width="100%",
-                        spacing=Spacing.SMALL.value,
-                        padding=Size.DEFAULT.value,
-                        margin="0px 0px 0px 0px",
-                        align_items="center",
-                        justify_content="center",
-                    ) 
-                ),
                 align="center",
                 width="100%",
                 align_items="center",
@@ -183,17 +154,15 @@ def pie_de_foto() -> rx.Component:
         rx.desktop_only(
             rx.hover_card.root(
                 rx.hover_card.trigger(
-                    rx.icon("qr-code", size=26, on_click=DisplayState.descargar_qr),
+                    rx.icon("qr-code", size=30, on_click=DisplayState.descargar_qr),
                 ),
                 rx.hover_card.content(
-                    rx.text("Descargue el código QR de este vehículo."),
+                    rx.text("Descargue el código QR"),
                     side="right", side_offset=15, align="center",
                 ),
             )
         ),
-        rx.separator(margin="50px 0px 30px 0px"),
         gap=Size.DEFAULT.value,
-        align="center", wrap="wrap",
     )
 
 

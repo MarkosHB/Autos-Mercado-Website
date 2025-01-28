@@ -68,7 +68,6 @@ def stock() -> rx.Component:
                         "repeat(2, 1fr)",
                         "repeat(2, 1fr)",
                         "repeat(3, 1fr)",
-                        "repeat(4, 1fr)",
                     ],
                     width="100%",
                     spacing=Spacing.DEFAULT.value,
