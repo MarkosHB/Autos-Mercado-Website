@@ -85,7 +85,7 @@ class SupabaseAPI:
     def fetch_presentation_photos(self) -> list[str]:
         response = (
             self.supabase.table(self.SUPABASE_TABLE)
-            .select("imagen")
+            .select("imagen, id")
             .filter('check_anunciado', 'eq', True)
             .filter('check_vendido', 'eq', False)
             .execute()
@@ -95,7 +95,7 @@ class SupabaseAPI:
 
         if len(response.data) > 0:
             for coche in response.data:
-                fotos.append(self.imagen_preview(coche["imagen"]))
+                fotos.append(self.obtener_fotos(coche["id"], self.imagen_preview(coche["imagen"])))
 
         return fotos
 

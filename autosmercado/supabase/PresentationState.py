@@ -12,6 +12,5 @@ class PresentationState(rx.State):
 
     @rx.event
     def cambiar_imagen(self):
-        if len(self.fotos_presentacion) > 0:
-            self.current_image_idx = (self.current_image_idx + 1) % len(self.fotos_presentacion)
+        self.current_image_idx = (self.current_image_idx + 1) % len(self.fotos_presentacion)  # Error ignored
             
