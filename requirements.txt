@@ -9,6 +9,7 @@ aiohappyeyeballs==2.6.1
 aiohttp==3.12.0
     # via realtime
 aiosignal==1.3.2
+aiosignal==1.3.2
     # via aiohttp
 alembic==1.16.1
     # via reflex
@@ -59,11 +60,14 @@ h11==0.16.0
     #   httpcore
     #   wsproto
 h2==4.2.0
+h2==4.2.0
     # via httpx
+hpack==4.1.0
 hpack==4.1.0
     # via h2
 httpcore==1.0.9
     # via httpx
+httpx[http2]==0.28.1
 httpx[http2]==0.28.1
     # via
     #   gotrue
@@ -74,7 +78,10 @@ httpx[http2]==0.28.1
     #   supabase
     #   supafunc
 hyperframe==6.1.0
+hyperframe==6.1.0
     # via h2
+id==1.5.0
+    # via twine
 idna==3.10
     # via
     #   anyio
@@ -157,6 +164,7 @@ qrcode==8.2
 realtime==2.4.3
     # via supabase
 redis==5.2.1
+redis==5.2.1
     # via reflex
 reflex==0.7.12
     # via -r requirements.in
@@ -170,6 +178,7 @@ rich==14.0.0
     #   reflex-hosting-cli
 simple-websocket==1.1.0
     # via python-engineio
+six==1.17.0
 six==1.17.0
     # via python-dateutil
 sniffio==1.3.1
@@ -195,6 +204,7 @@ tabulate==0.9.0
 typing-extensions==4.13.2
     # via
     #   alembic
+    #   anyio
     #   anyio
     #   fastapi
     #   pydantic

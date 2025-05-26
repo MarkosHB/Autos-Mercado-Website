@@ -1,7 +1,7 @@
 # -------
 # Inicio.
 # -------
-CATALOGO_TITULO = "Descubra nuestro catálogo de vehículos"
+CATALOGO_TITULO = "Catálogo de coches en venta"
 
 
 # ------------------
@@ -16,7 +16,7 @@ DESPLEGABLE_HEADER1 = "1) Póngase en contacto con nosotros"
 DESPLEGABLE_HEADER2 = "2) Valore los candidatos tras la búsqueda"
 DESPLEGABLE_HEADER3 = "3) Obtenga el vehículo completamente revisado"
 DESPLEGABLE_TEXTO1 = "Una vez nos haya hecho llegar la marca y el modelo que busca, detallando aspectos como el presupuesto disponible, el kilometraje máximo o equipamiento incluido, nos dedicaremos a recopilar potenciales vehículos candidatos que se ajusten a sus necesidades. Recuerde que siempre puede comunicarse con nosotros mediante correo electrónico, teléfono y formularios indicados en esta misma web."
-DESPLEGABLE_TEXTO2 = "La decisión final será suya y no se encontrará bajo la obligación de escoger uno de los candidatos. Debido a que el vehículo no es propiedad nuestra y tras su visto bueno para iniciar el proceso de adquisición del mismo, haremos de intermediaros con el vendedor en origen para gestionar el tranporte y compra en sí misma. Usted deberá haber pagado la totalidad del precio del vehículo llegados a este punto."
+DESPLEGABLE_TEXTO2 = "La decisión final será suya y no se encontrará bajo la obligación de escoger uno de los candidatos. Debido a que el vehículo no es propiedad nuestra y tras su visto bueno para iniciar el proceso de adquisición del mismo, haremos de intermediaros con el vendedor en origen para gestionar el transporte y compra en sí misma. Usted deberá haber pagado la totalidad del precio del vehículo llegados a este punto."
 DESPLEGABLE_TEXTO3 = "Es frecuente que el estado en el que su nuevo vehículo es recibido no sea apto para entregárselo directamente, especialmente si es procedente del extranjero. Aspectos como la matriculación, ITV, impuestos de aduanas, documentación, etc, serán gestionados por nuestro personal para que usted no tenga que preocuparse. Finalmente, recibirá en mano las llaves de su coche completamente preparado en nuestras instalaciones."
 
 
